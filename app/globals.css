@@ -1,0 +1,373 @@
+@import "tailwindcss";
+@source "../src";
+@source "../app";
+
+@theme inline {
+	--font-sans: var(--font-outfit), Inter, system-ui, sans-serif;
+	--font-serif: Domine, Georgia, Cambria, "Times New Roman", Times, serif;
+	--font-headline: Domine, serif;
+	--font-body: "Work Sans", sans-serif;
+	--font-label: "Work Sans", sans-serif;
+	--font-headline-lg: Domine, serif;
+	--font-headline-lg-mobile: Domine, serif;
+	--font-headline-md: Domine, serif;
+	--font-headline-sm: Domine, serif;
+	--font-body-lg: "Work Sans", sans-serif;
+	--font-body-md: "Work Sans", sans-serif;
+	--font-label-md: "Work Sans", sans-serif;
+	--font-label-sm: "Work Sans", sans-serif;
+
+	--text-headline-lg: 48px;
+	--text-headline-lg--line-height: 1.1;
+	--text-headline-lg--letter-spacing: -0.02em;
+	--text-headline-lg--font-weight: 700;
+	--text-headline-lg-mobile: 32px;
+	--text-headline-lg-mobile--line-height: 1.2;
+	--text-headline-lg-mobile--font-weight: 700;
+	--text-headline-md: 32px;
+	--text-headline-md--line-height: 1.2;
+	--text-headline-md--font-weight: 600;
+	--text-headline-sm: 24px;
+	--text-headline-sm--line-height: 1.3;
+	--text-headline-sm--font-weight: 600;
+	--text-body-lg: 18px;
+	--text-body-lg--line-height: 1.6;
+	--text-body-lg--font-weight: 400;
+	--text-body-md: 16px;
+	--text-body-md--line-height: 1.6;
+	--text-body-md--font-weight: 400;
+	--text-label-md: 14px;
+	--text-label-md--line-height: 1.2;
+	--text-label-md--letter-spacing: 0.05em;
+	--text-label-md--font-weight: 600;
+	--text-label-sm: 12px;
+	--text-label-sm--line-height: 1.2;
+	--text-label-sm--font-weight: 500;
+
+	--spacing-margin-mobile: 16px;
+	--spacing-margin-desktop: 40px;
+	--spacing-gutter: 24px;
+
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-on-primary: var(--on-primary);
+	--color-on-secondary: var(--on-secondary);
+	--color-primary-container: var(--primary-container);
+	--color-on-primary-container: var(--on-primary-container);
+	--color-secondary-container: var(--secondary-container);
+	--color-on-secondary-container: var(--on-secondary-container);
+	--color-surface-container-low: var(--surface-container-low);
+	--color-surface-container-lowest: var(--surface-container-lowest);
+	--color-on-surface-variant: var(--on-surface-variant);
+	--color-on-surface: var(--on-surface);
+	--color-surface-dim: var(--surface-dim);
+	--color-primary-fixed-dim: var(--primary-fixed-dim);
+	--color-secondary-fixed-dim: var(--secondary-fixed-dim);
+	--color-surface: var(--surface);
+	--color-surface-bright: var(--surface-bright);
+	--color-surface-container-highest: var(--surface-container-highest);
+	--color-outline-variant: var(--outline-variant);
+	--color-outline: var(--outline);
+
+	--radius-lg: var(--radius);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+	--background: #fbf9f5;
+	--foreground: #1b1c1a;
+	--card: #ffffff;
+	--card-foreground: #1b1c1a;
+	--popover: #ffffff;
+	--popover-foreground: #1b1c1a;
+	--primary: #442a22; /* Ebanistería El Calvo Primary */
+	--primary-foreground: #ffffff;
+	--secondary: #7e5700; /* Ebanistería El Calvo Secondary */
+	--secondary-foreground: #ffffff;
+	--muted: #f5f3ef;
+	--muted-foreground: #504441;
+	--accent: #feb300;
+	--accent-foreground: #281900;
+	--destructive: #ba1a1a;
+	--destructive-foreground: #ffffff;
+	--border: #d4c3be;
+	--input: #d4c3be;
+	--ring: #7e5700;
+	--radius: 0.5rem;
+
+	--on-primary: #ffffff;
+	--on-secondary: #ffffff;
+	--primary-container: #5d4037;
+	--on-primary-container: #d4ada1;
+	--secondary-container: #feb300;
+	--on-secondary-container: #6a4800;
+	--surface-container-low: #f5f3ef;
+	--surface-container-lowest: #ffffff;
+	--on-surface-variant: #504441;
+	--surface: #fbf9f5;
+	--on-surface: #1b1c1a;
+	--surface-dim: #dbdad6;
+	--primary-fixed-dim: #e7bdb1;
+	--secondary-fixed-dim: #ffba38;
+	--surface-bright: #fbf9f5;
+	--surface-container-highest: #e4e2de;
+	--outline-variant: #d4c3be;
+	--outline: #827470;
+
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+}
+
+.dark {
+	--background: #09090b;
+	--foreground: #fafafa;
+	--card: #09090b;
+	--card-foreground: #fafafa;
+	--popover: #09090b;
+	--popover-foreground: #fafafa;
+	--primary: #ea580c; /* Orange 600 */
+	--primary-foreground: #ffffff;
+	--secondary: #27272a;
+	--secondary-foreground: #fafafa;
+	--muted: #27272a;
+	--muted-foreground: #a1a1aa;
+	--accent: #27272a;
+	--accent-foreground: #fafafa;
+	--destructive: #7f1d1d;
+	--destructive-foreground: #fafafa;
+	--border: #27272a;
+	--input: #27272a;
+	--ring: #ea580c;
+	--on-surface: #eae7e0;
+	--surface-dim: #3c3a34;
+	--primary-fixed-dim: #e8cfc0;
+	--secondary-fixed-dim: #d9c795;
+	--surface-bright: #3c3a34;
+	--surface-container-highest: #3e3c38;
+	--outline-variant: #8f8b86;
+	--outline: #938f99;
+}
+
+@layer base {
+	* {
+		border-color: var(--border);
+	}
+	body {
+		background-color: var(--background);
+		color: var(--foreground);
+		font-family: var(--font-sans, Inter, system-ui, sans-serif);
+		font-feature-settings:
+			"rlig" 1,
+			"calt" 1;
+	}
+}
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+.fade-in {
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+@keyframes shake {
+	0%, 100% { transform: translateX(0); }
+	10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+	20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.animate-shake {
+	animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.btn-primary { @apply bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded transition-all; }
+.btn-secondary { @apply bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded transition-all; }
+.btn-active:active { transform: scale(0.98); }
+
+/* PREMIUM AESTHETICS - MICRO-ANIMATIONS */
+@keyframes slideUpFade {
+	0% {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes scaleIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.slide-up-fade {
+	animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animation-delay-100 {
+	animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+	animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+	animation-delay: 300ms;
+}
+
+.button-shine {
+	position: relative;
+	overflow: hidden;
+}
+
+.button-shine::after {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -60%;
+	width: 30%;
+	height: 200%;
+	background: rgba(255, 255, 255, 0.24);
+	transform: rotate(35deg);
+	transition: none;
+}
+
+.button-shine:hover::after {
+	left: 120%;
+	transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover-glow {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+	box-shadow: 0 0 20px 2px rgba(var(--primary-rgb, 249, 115, 22), 0.15);
+	transform: translateY(-2px);
+}
+
+.interactive-card {
+	transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.interactive-card:hover {
+	transform: translateY(-6px) scale(1.02);
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+}
+
+/* ADMIN / DASHBOARD — Tipografía legible (área administrativa).
+ * Los componentes shadcn usan text-sm (14px) y text-xs (12px): muy pequeños
+ * para gestión. Se escala SOLO dentro de .dashboard-ui (main del dashboard),
+ * sin tocar el landing ni el storefront.
+ */
+.dashboard-ui {
+	font-size: 16px;
+}
+.dashboard-ui label,
+.dashboard-ui input:not([type="checkbox"]):not([type="radio"]),
+.dashboard-ui select,
+.dashboard-ui textarea,
+.dashboard-ui button,
+.dashboard-ui th,
+.dashboard-ui td {
+	font-size: 0.9375rem; /* 15px (antes 14px) */
+}
+.dashboard-ui input:not([type="checkbox"]):not([type="radio"]),
+.dashboard-ui select,
+.dashboard-ui textarea {
+	line-height: 1.5rem;
+}
+.dashboard-ui p,
+.dashboard-ui li {
+	font-size: 0.9375rem; /* 15px (antes 12px) */
+	line-height: 1.5rem;
+}
+.dashboard-ui .text-muted-foreground {
+	font-size: 0.875rem; /* 14px (antes 13px) — textos descriptivos */
+	line-height: 1.375rem;
+}
+.dashboard-ui small,
+.dashboard-ui .text-xs {
+	font-size: 0.8125rem; /* 13px (antes 12px) */
+	line-height: 1.25rem;
+}
+
+/* MOBILE SIDEBAR */
+.mobile-sidebar { display: block !important; }
+
+/* DESKTOP SIDEBAR */
+.desktop-sidebar { display: none !important; }
+
+/* MOBILE: no offset, topbar + bottom nav are in normal flow */
+.desktop-main { padding: 0 0 calc(76px + env(safe-area-inset-bottom)); }
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+	.mobile-sidebar { display: none !important; }
+	.desktop-sidebar { display: flex !important; }
+	.desktop-main { margin-left: 288px; padding-top: 0; padding-bottom: 0; }
+	.dashboard-mobile { display: none !important; }
+}

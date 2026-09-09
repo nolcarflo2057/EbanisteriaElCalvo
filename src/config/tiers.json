@@ -1,0 +1,25 @@
+{
+  "_comment": "Fuente única de verdad para tiers comerciales. Consumido por scripts/release-client.js y por el generador de specs del panel /admin/modules. 'modules' lista módulos OPCIONALES habilitados (los core siempre van). 'available: false' = tier visible en UI pero no empaquetable hasta que su código exista en el master. 'notImplemented' = módulos declarados sin carpeta de feature real; la UI los muestra como Próximamente.",
+  "tiers": {
+    "landing-basic": {
+      "label": "Landing Estática",
+      "description": "Sitio de una página con editor de bloques. Sin captura de leads.",
+      "modules": ["landing", "blocks"],
+      "available": true
+    },
+    "business": {
+      "label": "Business",
+      "description": "Landing + bloques + captura de leads de contacto.",
+      "modules": ["landing", "blocks", "leads"],
+      "available": true
+    },
+    "full": {
+      "label": "Full",
+      "description": "Todo el ecosistema: e-commerce, citas, facturación.",
+      "modules": "*",
+      "available": false,
+      "note": "Requiere implementar ecommerce y billing en el master"
+    }
+  },
+  "notImplemented": ["blog", "billing", "ecommerce"]
+}

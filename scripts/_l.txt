@@ -1,0 +1,66 @@
+﻿
+> carvin-ecommerce@0.1.0 update:release C:\Users\Tat├ín\Documents\2-boiler-carvin-landigPage-marcaBlanca
+> node scripts/update-release.js "ebanisteria-el-calvo"
+
+[1m[36m
+├óÔÇóÔÇØ├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇóÔÇö
+├óÔÇóÔÇÿ   ├░┼©ÔÇØÔÇ× CARVIN UPDATE - Actualizar Release         ├óÔÇóÔÇÿ
+├óÔÇó┼í├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬Ø
+[0m
+[36m[1m[0m 
+├░┼©ÔÇ£ÔÇ╣ [1/6] Leyendo config del release actual...
+[32m├ó┼ôÔÇª[0m release.config.json le├â┬¡do (tier: business)
+[32m├ó┼ôÔÇª[0m M├â┬│dulos detectados: landing, blocks, leads, analytics, analytics_traffic, analytics_conversions, analytics_behavior, whitelabel, whitelabel_whatsapp, whitelabel_chatbot_simple, whitelabel_chatbot_advanced
+[32m├ó┼ôÔÇª[0m .env preservado
+[32m├ó┼ôÔÇª[0m .env.local preservado
+[32m├ó┼ôÔÇª[0m seed.config.json preservado
+[36m[1m[0m 
+├░┼©ÔÇ£┬ª [2/6] Copiando proyecto maestro...
+[32m├ó┼ôÔÇª[0m Copia completada
+[32m­ƒöÆ[0m next.config: removeConsole activado (producci├│n limpia)
+[32m­ƒöÆ[0m IPs de LAN removidas: next.config.ts
+[32m­ƒöÆ[0m IPs de LAN removidas: src\lib\auth\auth.ts
+[32m­ƒöÆ[0m Usuario demo (pepe/12345678) removido del seed
+[32m­ƒöÆ[0m Paleta super-admin desactivada en blocks (cliente)
+[32mÔ£à[0m Snapshot de DB copiado -> db-backups/seed-snapshot.json
+[32mÔ£à[0m db:seed del release actualizado
+[36m[1m[0m 
+├░┼©ÔÇ£┬Ø [3/6] Restaurando configuraci├â┬│n...
+[32m├ó┼ôÔÇª[0m .env restaurado
+[32m├ó┼ôÔÇª[0m .env.local restaurado
+[32m├ó┼ôÔÇª[0m seed.config.json restaurado
+[32m├ó┼ôÔÇª[0m release.config.json restaurado
+[36m[1m[0m 
+├ó┼íÔäó├»┬©  [4/6] Regenerando modules.ts...
+[32m├ó┼ôÔÇª[0m modules.ts regenerado
+[36m[1m[0m 
+├░┼©ÔÇöÔÇÿ├»┬©┬Å  [5/6] Purgando m├â┬│dulos deshabilitados...
+[31m├░┼©ÔÇöÔÇÿ├»┬©┬Å[0m Purgado: src\features\appointments
+[31m├░┼©ÔÇöÔÇÿ├»┬©┬Å[0m Purgado: src\features\blocks\blocks\appointments
+[31m├░┼©ÔÇöÔÇÿ├»┬©┬Å[0m Purgado: app\%28admin%29\appointments
+[31m├░┼©ÔÇöÔÇÿ├»┬©┬Å[0m Purgado: app\[domain]\dashboard\appointments
+[32m├ó┼ôÔÇª[0m 4 archivos eliminados
+[36m[1m[0m 
+├░┼©ÔÇ£ÔÇ╣ [5b] Purgando referencias cross-module...
+[32m├ó┼ôÔÇª[0m No hay referencias cross-module pendientes
+[36m[1m[0m 
+├░┼©ÔÇØ┬º [6/6] Parcheando imports y sidebar...
+[32m├ó┼ôÔÇª[0m 1 archivos parcheados (imports)
+[31m├░┼©ÔÇöÔÇÿ├»┬©┬Å[0m Eliminado: admin/modules
+[31m├░┼©ÔÇöÔÇÿ├»┬©┬Å[0m Eliminado: admin/modules
+[32mÔ£à[0m Gate de calidad: cero referencias huerfanas
+
+[1m[32m
+├óÔÇóÔÇØ├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇóÔÇö
+├óÔÇóÔÇÿ   ├ó┼ôÔÇª RELEASE ACTUALIZADO                         ├óÔÇóÔÇÿ
+├óÔÇó┼í├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬É├óÔÇó┬Ø
+[0m
+Carpeta: releases/ebanisteria-el-calvo/[36m[0m ├░┼©ÔÇ£┬ü
+M├â┬│dulos: landing, blocks, leads, analytics, analytics_traffic, analytics_conversions, analytics_behavior, whitelabel, whitelabel_whatsapp, whitelabel_chatbot_simple, whitelabel_chatbot_advanced[36m[0m ├░┼©ÔÇ£┬ª
+Code actualizado, config preservada[36m[0m ├░┼©ÔÇØÔÇ×
+
+[1mSiguientes pasos:[0m
+  cd releases/ebanisteria-el-calvo
+  pnpm install          # Solo si cambiaron dependencias
+  pnpm dlx drizzle-kit push  # Si cambiaste el schema DB
+  pnpm dev
