@@ -154,25 +154,7 @@ const NEEDS_HUMAN_TOOL = {
 	},
 };
 
-// Herramienta de respuesta ANCLADA: el bot solo puede responder citando
-// textualmente el CONTEXTO (datos del negocio + base de conocimiento). El
-// servidor valida que la cita exista literalmente en el CONTEXTO, lo que
-// GARANTIZA que el bot nunca contesta con conocimiento propio ajeno al negocio.
-const RESPOND_TOOL = {
-	type: "function",
-	function: {
-		name: "respondFromContext",
-		description:
-			"Responde al cliente citando TEXTUALMENTE (copia y pega exacto, sin cambiar ni añadir palabras) la frase del CONTEXTO que contesta su pregunta. Úsala SOLO si la respuesta está literalmente en el CONTEXTO.",
-		parameters: {
-			type: "object",
-			properties: {
-				quote: { type: "string", description: "Frase exacta copiada del CONTEXTO que responde la pregunta" },
-			},
-			required: ["quote"],
-		},
-	},
-};
+// RESPOND_TOOL removed to allow elite natural language responses
 
 function buildContext(opts: {
 	businessName: string;
@@ -286,12 +268,13 @@ async function callOpenRouter(opts: {
 		return { content: "Listo.", usedAi: true };
 	}
 
-	// ---- Público: respuestas ANCLADAS al CONTEXTO (sin conocimiento propio) ----
-	const system = `Eres el asistente virtual de "${opts.businessName}". Tu ÚNICA fuente de verdad es el CONTEXTO que se te entrega. Reglas estrictas:
-1) Para responder, usa SIEMPRE la herramienta respondFromContext citando TEXTUALMENTE (copia y pega exacto, sin cambiar ni añadir palabras) la frase del CONTEXTO que contesta la pregunta del cliente.
-2) Si la respuesta NO está en el CONTEXTO, usa la herramienta needsHuman.
-3) NUNCA uses conocimiento propio ni inventes datos del negocio.
-4) Sé conciso y amable (español).${opts.extraSystemPrompt ? `\n\nInstrucciones adicionales: ${opts.extraSystemPrompt}` : ""}`;
+	// ---- Público: respuestas con IA avanzada basadas en CONTEXTO ----
+	const system = `Eres el asistente virtual experto y de élite de "${opts.businessName}". Tu misión es dar respuestas brillantes, muy amables y persuasivas usando ÚNICAMENTE la información en el CONTEXTO que se te entrega.
+Reglas estrictas:
+1) NUNCA inventes información, precios, direcciones o servicios que no estén explícitamente en el CONTEXTO. Si te preguntan algo que no está en el CONTEXTO, usa SIEMPRE la herramienta needsHuman.
+2) Sé empático, comercial y resuelve las dudas del cliente con un tono premium.
+3) Adapta la información del contexto para que suene natural. Usa emojis con elegancia.
+4) Responde SIEMPRE en español.${opts.extraSystemPrompt ? `\n\nInstrucciones adicionales: ${opts.extraSystemPrompt}` : ""}`;
 
 	const res = await fetch(OPENROUTER_URL, {
 		method: "POST",
@@ -307,34 +290,17 @@ async function callOpenRouter(opts: {
 				{ role: "system", content: `${system}\n\nCONTEXTO:\n${ctx}` },
 				{ role: "user", content: opts.userMessage },
 			],
-			tools: [RESPOND_TOOL, NEEDS_HUMAN_TOOL],
+			tools: [NEEDS_HUMAN_TOOL],
 			tool_choice: "auto",
 			max_tokens: 400,
-			temperature: 0.3,
+			temperature: 0.5,
 		}),
 	});
 	if (!res.ok) throw new Error(`OpenRouter ${res.status}`);
 
 	const data = await res.json();
 	const msg = data?.choices?.[0]?.message;
-	// Algunos modelos (p.ej. nemotron) devuelven el tool-call como texto en
-	// "content" en vez de en "tool_calls". Lo parseamos como fallback.
 	const tc = extractToolCall(msg) ?? (msg?.tool_calls?.[0] as ToolCall | undefined);
-	const hay = normalize(ctx);
-
-	if (tc?.function?.name === "respondFromContext") {
-		let args: { quote?: string } = {};
-		try {
-			args = JSON.parse(tc.function?.arguments || "{}");
-		} catch {}
-		const quote = normalize(args.quote || "");
-		if (quote && hay.includes(quote)) {
-			return { content: args.quote as string, usedAi: true };
-		}
-		// Cita no encontrada literalmente en el CONTEXTO -> no responder de propio
-		await ChatbotKnowledgeService.logUnknown(opts.tenantId, opts.userMessage);
-		return { content: whatsappMsg, usedAi: true };
-	}
 
 	if (tc?.function?.name === "needsHuman") {
 		let q = opts.userMessage;
@@ -346,7 +312,12 @@ async function callOpenRouter(opts: {
 		return { content: whatsappMsg, usedAi: true };
 	}
 
-	// Sin tool-call (texto libre) -> NO contestamos con conocimiento propio.
+	// Si el modelo dio una respuesta natural basada en el contexto
+	if (msg?.content && msg.content.trim().length > 0) {
+		return { content: msg.content, usedAi: true };
+	}
+
+	// Fallback
 	await ChatbotKnowledgeService.logUnknown(opts.tenantId, opts.userMessage);
 	return { content: whatsappMsg, usedAi: true };
 }
