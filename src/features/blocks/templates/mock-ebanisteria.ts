@@ -124,7 +124,7 @@ export const locationHoursProps: LocationHoursBlockProps = {
 	phone: "+57 312 760 9748",
 	mapEmbedUrl:
 		"https://maps.google.com/maps?q=Ebanisteria%20El%20Calvo,%20Pereira,%20Risaralda&t=&z=17&ie=UTF8&iwloc=&output=embed",
-	directionsUrl: "https://maps.google.com/?q=4.7952561,-75.7462933",
+	directionsUrl: "https://www.google.com/maps?cid=14653104836874347307",
 	background: "primary",
 };
 
