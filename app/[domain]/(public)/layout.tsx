@@ -56,9 +56,12 @@ export async function generateMetadata(): Promise<Metadata> {
 			getTenantSlugById(tenantId),
 		]);
 
-		const name = settings?.name || "Landing";
-		const title = seo?.title || name;
-		const description = seo?.description || "";
+		const name = settings?.name || "Ebanistería El Calvo";
+		const defaultTitle = "Ebanistería El Calvo | Restauración, Tapicería y Diseño a Medida";
+		const defaultDescription = "Especialistas en darle nueva vida a tus muebles con restauración, tapicería y pintura premium. Además, diseñamos y fabricamos puertas, cocinas integrales, clósets y armarios a medida. Expertos en reparación e instalación.";
+
+		const title = seo?.title || defaultTitle;
+		const description = seo?.description || defaultDescription;
 		const canonical = seo?.canonicalUrl || `${baseUrl}/${slug ?? ""}`;
 		const keywords = seo?.keywords
 			? seo.keywords
