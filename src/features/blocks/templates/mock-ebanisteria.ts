@@ -21,48 +21,48 @@ export const navigationProps: NavigationBlockProps = {
 };
 
 export const heroProps: HeroBlockProps = {
-	title: "Transformamos tus muebles con alegría y maestría",
+	title: "Tus muebles tienen historia. Nosotros les damos una nueva vida",
 	subtitle:
-		"En el corazón de Perla del Sur, devolvemos la vida a tus puertas, sillas y sofás con técnicas expertas de restauración, pintura y tapicería.",
+		"Rescatamos la historia de tus piezas con acabados de primera. Además, diseñamos y fabricamos soluciones a medida para tu hogar: modernas cocinas integrales, clósets y puertas de alta calidad.",
 	ctaLabel: "Contáctanos ahora",
 	ctaHref: "#contacto",
 	bgImage:
 		"https://lh3.googleusercontent.com/aida-public/AB6AXuDsf2gE4yozlKT3nJY-WKWevRPgwid8Twb_v15Hb8p0_47EdMm6ZsFoaYse4r730ChsgzFpkRKl-YEO2sbr16j9mHBv8TBo7NkxoTGEdV5SIijNTAbAQtpWsleml352OW4FP7pDVJ8BUufQr1jLFPxIiFaG4wfezZR6_RkxvbSi_NxgVGpGBQmAbSzCfzdBz39Kddc81wJgxb-y4ppQDPmExZxOWIO9n8fzYZub3wB7p8tvNlpPKAxnhw",
-	bgAlt: "Taller de ebanistería con muebles en restauración",
-	badge: "Ebanistería artesanal",
+	bgAlt: "Taller de restauración con muebles antiguos",
+	badge: "Restauración & Carpintería Arquitectónica",
 };
 
 export const servicesGridProps: ServicesGridBlockProps = {
-	title: "Servicios de Ebanistería de Elite",
-	subtitle: "Nuestra Especialidad",
+	title: "Nuestros Servicios",
+	subtitle: "Lo que hacemos mejor",
 	columns: 4,
 	services: [
 		{
 			icon: "auto_fix",
-			title: "Restauración",
+			title: "Restauración de Muebles",
 			description:
-				"Recupera el alma de tus muebles antiguos con técnicas manuales meticulosas.",
+				"Recuperamos el esplendor de tus muebles y antigüedades respetando su historia y esencia.",
 			iconBg: "#442a22",
 		},
 		{
-			icon: "format_paint",
-			title: "Pintura y Lacado",
+			icon: "countertops",
+			title: "Cocinas Integrales",
 			description:
-				"Acabados profesionales y revestimientos duraderos que duran toda la vida en tu hogar.",
+				"Diseñamos y fabricamos la cocina de tus sueños, optimizando cada espacio con acabados modernos y duraderos.",
 			iconBg: "#442a22",
 		},
 		{
-			icon: "chair",
-			title: "Tapicería",
+			icon: "checkroom",
+			title: "Clósets a Medida",
 			description:
-				"Comodidad y estilo combinados con telas premium cuidadosamente seleccionadas para tus sofás.",
+				"Soluciones de almacenamiento personalizadas que combinan funcionalidad, elegancia y diseño interior.",
 			iconBg: "#442a22",
 		},
 		{
 			icon: "door_front",
-			title: "Puertas para el Hogar",
+			title: "Puertas y Acabados",
 			description:
-				"Seguridad y belleza arquitectónica para tu entrada y espacios interiores.",
+				"Fabricación y reparación de puertas, garantizando seguridad y un estilo arquitectónico perfecto para tu hogar.",
 			iconBg: "#442a22",
 		},
 	],
@@ -72,24 +72,24 @@ export const artisanShowcaseProps: ArtisanShowcaseBlockProps = {
 	layout: "image-left",
 	image:
 		"https://lh3.googleusercontent.com/aida-public/AB6AXuCWuBIsFR8zv9780y07s7r3cpOiLDqijZyyCWfJdO9VEpbei7ulqnJ_mpc2ceZpATf5U_g3HZg5GXG8sNFECLlhAncUO8GOqSInW6vaSDmeA_BCSfSF7vJxseHe_KFxUhrXt7SzZ1rktrhRiSsdksS27uR_1MxUOuorPl634ip5TBFAokrJJzcEjopxnxStbnMgFqY_wDHIrrpKtF0nnY4MqboXOod2lv0Bq9mPNEXgC3Ms97GYm5Nd2A",
-	imageAlt: "Maestro ebanista trabajando en taller iluminado por luz natural",
-	badge: "El Maestro Detrás del Arte",
-	title: "Conoce a El Calvo: pasión por el arte de la madera",
+	imageAlt: "Maestro restaurador trabajando meticulosamente la madera",
+	badge: "El Maestro Detrás de la Magia",
+	title: "Conoce a El Calvo: Pasión por darle nueva vida a la madera",
 	description:
-		"Más que restauración, es amor por cada detalle. Con décadas de experiencia sirviendo a nuestra comunidad, entendemos que cada mueble cuenta una historia. Nuestra misión es preservar ese legado con la paciencia y el respeto que la madera noble merece.",
+		"Diseñamos carpintería arquitectónica a medida y rescatamos piezas con historia. Con décadas de experiencia sirviendo a nuestra comunidad, entendemos el valor de un trabajo bien hecho. Nuestra misión es crear espacios únicos y preservar el legado de tus muebles con la paciencia y el cuidado que la buena madera merece.",
 	background: "light",
 	badgeContent: {
 		icon: "verified",
-		label: "Certificación Artesanal",
-		subtitle: "Garantía de calidad en cada pieza restaurada.",
+		label: "Expertos en Restauración",
+		subtitle: "Garantía de cuidado total en cada pieza intervenida.",
 	},
 };
 
 export const galleryProps: GalleryBlockProps = {
-	title: "Nuestra Galería",
-	subtitle: "Portafolio",
+	title: "Galería de Transformaciones",
+	subtitle: "Antes y Después",
 	description:
-		"Cada pieza es un testimonio de nuestra dedicación a la excelencia y el respeto por la tradición maderera.",
+		"Cada pieza restaurada es un testimonio de nuestra dedicación por rescatar la belleza original oculta por el paso del tiempo.",
 	images: [
 		{
 			url: "https://lh3.googleusercontent.com/aida-public/AB6AXuCIWSbNpdYuImq7LIX9EGms5YmXdaAaMi7K1w0FAZKhfd8v6YGJKlVU_GzcKcuS262kfz5ien3wZdkZaywFPfsWpOtcn4LWvIOqjJaLXiysGA5CSkwBWFR_C_qorCheNCLJWArK822-eFV3khp2gaqfx11VRmYKhJbsdakffr2EvfqV4Nq6JumDeeUejLj0sPDCLw1L74ZG7SVZiVlzJGIMuj0zt69ZAEiG4QQRrBXNfbJzjVxzqlYZ0Q",
@@ -98,27 +98,27 @@ export const galleryProps: GalleryBlockProps = {
 		},
 		{
 			url: "https://lh3.googleusercontent.com/aida-public/AB6AXuAkYvxFes9gGFFf67bAoha-bm9f0g5k5sLB4A0R9ZRgUHeILZnYpNJnOr_34GFYyrBhLWlFSyNubmJR7vzKaX-3wPtRbJrqDxZhq5mqEP50ab_d5Qo5MG0kJZSKJB32eDNB_52N--u3JQo9vOH-LOSfyFXEzu32YkT88dPkqPql1QMtjyL-ttRW2beYNoWlBvqxb7Pmru8wOqDV7Fs-l0c4LWSWb7cU_P7LWlNQ7SvVWsiEQd_3I9gpfA",
-			label: "Puerta de Roble Macizo",
-			alt: "Puerta de madera a medida",
+			label: "Puerta de Roble Recuperada",
+			alt: "Puerta de madera antigua recuperada",
 		},
 		{
 			url: "https://lh3.googleusercontent.com/aida-public/AB6AXuAwqJZUz_Kps1FldNayNaMjB5TTGdolJLE247qr_mtpoh8uR306AhkQlZtjYXr9qorrFerj9hn_ascN95TTkOKN1pYTs5yV_PLBNdlMXkaCwb03LN5CbPzerlPbybMAmy7tg2q3LOUaCoCGa107DTeZI29XZbCDfaFNCS2dEe4fkO0g5nK9ER5yvZ7PBDqHZwE42KogqQBZkzcqApmt5scbpj2RGJZCptCvpx6t9KUx6UzXFu1oVg8r3w",
-			label: "Mesa de Comedor en Nogal",
-			alt: "Mesa de comedor pulida",
+			label: "Mesa de Comedor Refinada",
+			alt: "Mesa de comedor pulida y barnizada",
 		},
 		{
 			url: "https://lh3.googleusercontent.com/aida-public/AB6AXuAy35_zxeRLIeMKzx1Rr9Xcyqqy8CmhGId7eAOLSTjyC1irbbo5kkTrXAT5oLFgpjdKELWTT9GyBjZOv_xYGX2jMxF9zPQbU2fQC-ds6U1z9JI87kappw9symlLr5hl97GqvgW5FWksla6SmXZzd6WB4gzlnthLZ2gw4P_Qx4AHwk3ZYABPahWR8cyodpzYkS-Ks5MoE1IoAMeJcVW97SW7NjK1fjV2merSPEZtkOQYg4wFBWrrGCAERg",
-			label: "Detalle de Talla Artesanal",
-			alt: "Talla detallada en madera",
+			label: "Talla Artesanal Limpiada",
+			alt: "Talla de madera restaurada cuidadosamente",
 		},
 	],
 };
 
 export const locationHoursProps: LocationHoursBlockProps = {
 	icon: "location_on",
-	title: "Ubicados en el Barrio Perla del Sur",
+	title: "Tu Taller de Confianza en la Perla del Sur",
 	description:
-		"Servicio local, calidad artesanal. Orgullosos de ser el taller de confianza para las familias de nuestra región.",
+		"Ponerte en contacto con nosotros es la mejor decisión que puedes tomar. Déjanos asesorarte en tu próximo proyecto de carpintería.",
 	address: "Ebanistería El Calvo, Pereira, Risaralda",
 	schedule: "Lunes a Viernes: 9:00 - 18:00",
 	phone: "+57 312 760 9748",
@@ -129,13 +129,13 @@ export const locationHoursProps: LocationHoursBlockProps = {
 };
 
 export const contactFormProps: ContactFormBlockProps = {
-	title: "Pide tu presupuesto",
+	title: "Pide tu presupuesto de Restauración",
 	description:
-		"Cuéntanos sobre tu proyecto. Ya sea una silla familiar o todas las puertas de tu casa, te daremos una valoración honesta y profesional.",
+		"Cuéntanos sobre tu mueble. Ya sea la silla del abuelo o las puertas desgastadas de tu casa, te daremos una valoración honesta sobre su rescate.",
 	leftBackground: "primary",
 	benefits: [
-		{ icon: "check_circle", text: "Presupuestos detallados sin compromiso" },
-		{ icon: "check_circle", text: "Materiales de primera calidad" },
+		{ icon: "check_circle", text: "Evaluación sin compromiso" },
+		{ icon: "check_circle", text: "Uso de barnices y telas premium" },
 		{ icon: "check_circle", text: "Transporte propio disponible" },
 	],
 	fields: [
@@ -145,24 +145,25 @@ export const contactFormProps: ContactFormBlockProps = {
 			key: "servicio",
 			label: "Servicio interesado",
 			type: "select",
-			placeholder: "Selecciona un servicio",
+			placeholder: "Selecciona el servicio que necesitas",
 			required: true,
 			options: JSON.stringify([
-				{ value: "restauracion", label: "Restauración" },
-				{ value: "pintura", label: "Pintura y Lacado" },
-				{ value: "tapiceria", label: "Tapicería" },
-				{ value: "puertas", label: "Puertas" },
+				{ value: "restauracion", label: "Restauración de Muebles" },
+				{ value: "cocinas", label: "Cocinas Integrales a Medida" },
+				{ value: "closets", label: "Clósets y Vestidores" },
+				{ value: "puertas", label: "Puertas y Acabados" },
 			]),
 		},
-		{ key: "mensaje", label: "Mensaje o detalles (opcional)", type: "textarea", placeholder: "Cuéntanos un poco sobre el mueble...", required: false },
+		{ key: "mensaje", label: "Mensaje o detalles (opcional)", type: "textarea", placeholder: "Cuéntanos un poco sobre el estado actual del mueble...", required: false },
 	],
 	submitLabel: "Enviar Solicitud",
 };
 
 export const footerProps: FooterBlockProps = {
-	brand: BRAND,
-	tagline: "Muebles con alma, hechos a mano.",
-	copyright: `© ${new Date().getFullYear()} ${BRAND}. Perla del Sur.`,
+	logo: "/logo.png",
+	brand: "Ebanistería El Calvo",
+	tagline: "Muebles con historia, restaurados con maestría.",
+	copyright: `© 2026 Ebanistería El Calvo. Perla del Sur.`,
 	linkGroups: [
 		{
 			title: "Navegación",

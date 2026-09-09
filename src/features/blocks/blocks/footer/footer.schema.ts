@@ -11,6 +11,7 @@ export interface FooterLinkGroup {
 }
 
 export interface FooterBlockProps {
+	logo?: string;
 	brand?: string;
 	tagline?: string;
 	copyright?: string;

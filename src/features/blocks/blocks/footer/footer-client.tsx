@@ -136,15 +136,24 @@ export function FooterClient({ props }: Props) {
 				<div className="max-w-[1200px] mx-auto px-margin-desktop py-12 flex max-md:flex-col md:flex-row justify-between items-center gap-gutter">
 					{/* Brand + Copyright */}
 					<div className="flex flex-col items-center md:items-start gap-4">
-						<span className="font-headline-sm text-headline-sm text-white">
+						{props.logo && (
+							<div className="w-full flex justify-center md:justify-start">
+								<img 
+									src={props.logo} 
+									alt={`Logo ${props.brand || "Marca"}`} 
+									className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-2xl shadow-md border-2 border-white/10" 
+								/>
+							</div>
+						)}
+						<span className="font-headline-sm text-headline-sm text-white text-center md:text-left w-full">
 							{props.brand}
 						</span>
 						{props.tagline && (
-							<p className="font-label-sm text-label-sm text-white/70 -mt-2">
+							<p className="font-label-sm text-label-sm text-white/70 -mt-2 text-center md:text-left w-full">
 								{props.tagline}
 							</p>
 						)}
-						<p className="font-label-sm text-label-sm text-white/90">
+						<p className="font-label-sm text-label-sm text-white/90 text-center md:text-left w-full">
 							{props.copyright}
 						</p>
 					</div>

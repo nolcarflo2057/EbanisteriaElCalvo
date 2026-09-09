@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { LandingFooter } from "@/features/landing/components";
 import { StoreConfigProvider } from "@/features/stores/components/StoreConfigProvider";
 import { getStoreConfig } from "@/features/stores/services/store-config.service";
 import { AnalyticsInjector } from "@/features/analytics/components/AnalyticsInjector";
@@ -134,7 +133,6 @@ export default async function StoreLayout({
 			/>
 			<div className="min-h-screen flex flex-col bg-background">
 				<main className="flex-1 w-full">{children}</main>
-				{!hasBlocks && <LandingFooter />}
 			</div>
 			<CookieConsentBanner />
 			{tenantSlug && <FloatingWidgets slug={tenantSlug} />}
