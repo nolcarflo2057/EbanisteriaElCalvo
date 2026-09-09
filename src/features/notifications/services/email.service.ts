@@ -71,6 +71,7 @@ export async function sendEmail(opts: { to: string; subject: string; html: strin
 			to: opts.to,
 			subject: opts.subject,
 			html: opts.html,
+		});
 		return { success: true, messageId: info.messageId };
 	} catch (error) {
 		console.error("[email] error enviando a %s:", opts.to, error);

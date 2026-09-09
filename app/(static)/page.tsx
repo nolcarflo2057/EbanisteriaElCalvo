@@ -1,12 +1,14 @@
 "use client";
 
 import { TenantThemeProvider } from "@/core/tenant/tenant-theme-context";
+import Image from "next/image";
 import { StoreConfigProvider } from "@/features/stores/components/StoreConfigProvider";
 import { NavigationClient } from "@/features/blocks/blocks/navigation/navigation-client";
 import { LandingHero } from "@/features/landing/components/landing-hero/landing-hero";
 import { LandingGallery } from "@/features/landing/components/landing-gallery/landing-gallery";
 import { FooterClient } from "@/features/blocks/blocks/footer/footer-client";
 import { ContactFormClient } from "@/features/blocks/blocks/contact-form/contact-form-client";
+
 import { cn } from "@/shared/utils/cn";
 import {
 	nav, hero, services, artisan, gallery, location, contact, footer,
@@ -170,7 +172,14 @@ function ArtisanShowcaseStatic() {
 				<div className={cn("grid md:grid-cols-2 gap-16 items-center", isImageLeft ? "" : "md:flex-row-reverse")}>
 					<div className="relative">
 						<div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
-							<img alt={p.imageAlt} className="w-full h-full object-cover" src={p.image} />
+							<Image
+  alt={p.imageAlt}
+  src={p.image}
+  fill
+  sizes="100vw"
+  className="object-cover"
+  unoptimized={p.image.startsWith("http")}
+/>
 						</div>
 						<div className="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl -z-10" />
 						<div className="absolute -top-8 -left-8 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl -z-10" />
