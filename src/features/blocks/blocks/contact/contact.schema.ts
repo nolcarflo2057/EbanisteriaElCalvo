@@ -54,7 +54,7 @@ export const contactDefaultProps: ContactBlockProps = {
 	title: "Contáctanos",
 	subtitle: "Estamos para ayudarte",
 	mode: "form",
-	whatsapp: "573001234567",
+	whatsapp: "573127609748",
 	email: "hola@tienda.com",
 	ctaLabel: "Escríbenos por WhatsApp",
 	formTitle: "Déjanos un mensaje",
