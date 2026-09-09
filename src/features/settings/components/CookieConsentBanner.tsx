@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export const COOKIE_CONSENT_KEY = "cookie_consent";
 export const COOKIE_CONSENT_ACCEPTED = "accepted";
@@ -23,6 +24,7 @@ export function setCookieConsent(value: string) {
 
 export function CookieConsentBanner() {
 	const [visible, setVisible] = useState(false);
+	const router = useRouter();
 
 	useEffect(() => {
 		// Mostrar solo si aún no hay decisión guardada.
@@ -34,8 +36,8 @@ export function CookieConsentBanner() {
 	const decide = (value: string) => {
 		setCookieConsent(value);
 		setVisible(false);
-		// Recargar para que el servidor cargue (o no) los scripts de tracking según la decisión.
-		window.location.reload();
+		// Recargar suavemente para que el servidor inyecte scripts de tracking
+		router.refresh();
 	};
 
 	return (
