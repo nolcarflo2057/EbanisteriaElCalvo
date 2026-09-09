@@ -152,6 +152,7 @@ export const contactFormProps: ContactFormBlockProps = {
 				{ value: "cocinas", label: "Cocinas Integrales a Medida" },
 				{ value: "closets", label: "Clósets y Vestidores" },
 				{ value: "puertas", label: "Puertas y Acabados" },
+				{ value: "otros", label: "Otros / Diferente" },
 			]),
 		},
 		{ key: "mensaje", label: "Mensaje o detalles (opcional)", type: "textarea", placeholder: "Cuéntanos un poco sobre el estado actual del mueble...", required: false },
