@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLeadModal } from "@/features/leads/components/LeadModalProvider";
 import { type HeroCoverProps } from "./hero-cover.schema";
 
@@ -8,10 +9,14 @@ export function HeroCoverComponent({ props }: { props: HeroCoverProps }) {
 	return (
 		<section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-24 pb-16 md:pt-32 md:pb-section-gap v-section v-hero overflow-hidden">
 			<div className="absolute inset-0 z-0">
-				<img
-					className="w-full h-full object-cover object-right"
-					data-alt={props.backgroundAlt}
+				<Image
 					src={props.backgroundImage}
+					alt={props.backgroundAlt}
+					fill
+					sizes="100vw"
+					className="object-cover object-right"
+					priority
+					unoptimized={String(props.backgroundImage).startsWith("http")}
 				/>
 				<div className="absolute inset-0 bg-black/50" aria-hidden="true" />
 				<div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" aria-hidden="true" />

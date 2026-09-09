@@ -1,4 +1,5 @@
 import type { BlockDefinition } from "../../types/schema";
+import Image from "next/image";
 import { cn } from "@/shared/utils/cn";
 import { artisanShowcaseSchema, artisanShowcaseDefaultProps, type ArtisanShowcaseBlockProps } from "./artisan-showcase.schema";
 import { useArtisanShowcase } from "./useArtisanShowcase";
@@ -23,10 +24,13 @@ export const artisanShowcaseBlock: BlockDefinition<ArtisanShowcaseBlockProps> = 
 						{/* Image Column */}
 						<div className="relative">
 							<div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
-								<img
+								<Image
 									alt={props.imageAlt}
-									className="w-full h-full object-cover"
 									src={props.image}
+									fill
+									sizes="(max-width: 768px) 100vw, 50vw"
+									className="object-cover"
+									unoptimized={String(props.image).startsWith("http")}
 								/>
 							</div>
 							<div className="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl -z-10" />

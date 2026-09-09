@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { NavigationBlockProps } from "./navigation.schema";
 
 export function useNavigation(props: NavigationBlockProps) {
 	const [isOpen, setIsOpen] = useState(false);
 	const brandName = props.brand || "El Calvo";
-	const linksList = props.links || [];
+	const linksList = useMemo(() => props.links || [], [props.links]);
 	const ctaLabel = props.ctaLabel || "Pedir Presupuesto";
 	const ctaHref = props.ctaHref || "#contacto";
 

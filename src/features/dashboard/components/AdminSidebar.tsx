@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 import { cn } from "@/shared/utils/cn";
@@ -245,7 +246,7 @@ export function AdminSidebar({
 			channel.unsubscribe();
 			pusher.disconnect();
 		};
-	}, [session?.user?.id, pathname]);
+	}, [session?.user?.id, pathname, router]);
 
 	const handleSignOut = async () => {
 		await signOut({
@@ -267,10 +268,13 @@ export function AdminSidebar({
 						style={{ backgroundColor: primaryColor }}
 					>
 						{logoUrl ? (
-							<img
+							<Image
 								src={logoUrl}
 								alt={storeName}
+								width={40}
+								height={40}
 								className="w-full h-full object-cover rounded-lg"
+								unoptimized
 							/>
 						) : (
 							<span>{getInitials(storeName)}</span>
@@ -347,10 +351,13 @@ export function AdminSidebar({
 				<div className="flex items-center gap-4 px-4 py-3 text-sm text-muted-foreground">
 					<div className="w-11 h-11 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 text-sm font-bold text-foreground overflow-hidden">
 						{session?.user?.image ? (
-							<img
+							<Image
 								src={session.user.image}
 								alt={session.user.name || "Usuario"}
+								width={44}
+								height={44}
 								className="w-full h-full object-cover"
+								unoptimized
 							/>
 						) : (
 							<span>

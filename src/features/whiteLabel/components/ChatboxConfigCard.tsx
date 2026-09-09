@@ -153,7 +153,7 @@ function SimpleChatbotFields({
 				}),
 			);
 		}
-	}, [append, fields.length]);
+	}, [append, fields.length, watch]);
 
 	return (
 		<div className="border-t border-border pt-4 space-y-4">

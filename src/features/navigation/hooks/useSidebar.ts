@@ -136,7 +136,7 @@ export function useSidebar(onClose: () => void): UseSidebarReturn {
     }
 
     return sections;
-  }, [isAuthenticated, isAdmin, isSuperAdmin, onClose, handleSignOut]);
+  }, [isAuthenticated, isAdmin, onClose, handleSignOut]);
 
   return {
     user,

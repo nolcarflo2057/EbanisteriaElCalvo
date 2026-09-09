@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useLeadModal } from "@/features/leads/components/LeadModalProvider";
@@ -39,10 +40,13 @@ export function NavbarMinimalComponent({ props }: { props: NavbarMinimalProps })
 		>
 			<div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 md:py-6 w-full max-w-container-max mx-auto">
 				<div className="flex items-center gap-4">
-					<img
-						className="h-6 md:h-10 object-contain"
-						data-alt={props.logoAlt}
+					<Image
 						src={props.logoImage}
+						alt={props.logoAlt}
+						width={40}
+						height={40}
+						className="h-6 md:h-10 w-auto object-contain"
+						unoptimized={String(props.logoImage).startsWith("http")}
 					/>
 					<span className="font-display-lg text-[20px] md:text-headline-lg tracking-tighter text-primary uppercase">
 						{props.logoText}

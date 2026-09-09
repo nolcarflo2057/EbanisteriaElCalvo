@@ -7,6 +7,7 @@ import { Dialog } from "@/shared/components/ui/Dialog";
 import { UploadDropzone } from "@/shared/utils/uploadthing";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import Image from "next/image";
 import { getAppearanceAction } from "@/features/settings/actions/settings.actions";
 import { Camera, Mail, Shield, User, Loader2, Save, Key, Lock } from "lucide-react";
 
@@ -145,7 +146,7 @@ export default function ProfilePage() {
 				<div className="relative flex flex-col items-center -mt-28 pb-6 px-6">
 					<div className="relative group w-48 h-48 rounded-full border-4 border-card shadow-lg bg-secondary overflow-hidden flex items-center justify-center">
 						{image ? (
-							<img src={image} alt={name} className="w-full h-full object-cover" />
+							<Image src={image} alt={name} fill sizes="192px" className="object-cover" unoptimized />
 						) : (
 							<span className="text-5xl font-bold text-muted-foreground">
 								{getInitials(name)}
