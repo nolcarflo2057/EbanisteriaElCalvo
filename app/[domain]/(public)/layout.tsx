@@ -79,13 +79,13 @@ export async function generateMetadata(): Promise<Metadata> {
 				url: canonical,
 				siteName: name,
 				type: "website",
-				...(social?.ogImage ? { images: [{ url: social.ogImage }] } : {}),
+				images: [{ url: social?.ogImage || "/OpenGraph.png" }],
 			},
 			twitter: {
 				card: (social?.twitterCard as "summary" | "summary_large_image") || "summary_large_image",
 				title: social?.ogTitle || title,
 				description: social?.ogDescription || description,
-				...(social?.ogImage ? { images: [social.ogImage] } : {}),
+				images: [social?.ogImage || "/OpenGraph.png"],
 			},
 		};
 	} catch {
