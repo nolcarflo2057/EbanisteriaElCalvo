@@ -55,7 +55,7 @@ function MinimizeIcon({ className }: { className?: string }) {
  */
 function WhatsAppButton({ config, widgetClasses }: { config: ConfigData; widgetClasses: string }) {
   const number = config.whatsappNumber?.replace(/\D/g, "") ?? "";
-  const message = config.whatsappMessage || "Hola, quiero información";
+  const message = config.whatsappMessage || "Hola, me interesaría solicitar un presupuesto o cotización para sus servicios.";
   const href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 
   if (!number) return null;
@@ -404,7 +404,17 @@ function ChatbotWidget({ config, widgetClasses }: { config: ConfigData; widgetCl
                       : "self-start rounded-bl-md bg-muted text-foreground"
                   )}
                 >
-                  {m.content}
+                  <div className="flex flex-col gap-1 whitespace-pre-wrap">
+                    {m.content.split("\n").map((line, i) => (
+                      <span key={i}>
+                        {line.split(/(\*\*.*?\*\*)/g).map((part, j) => 
+                          part.startsWith("**") && part.endsWith("**") && part.length >= 4 
+                            ? <strong key={j}>{part.slice(2, -2)}</strong> 
+                            : part
+                        )}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
               {sending && (

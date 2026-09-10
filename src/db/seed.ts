@@ -261,7 +261,7 @@ async function seed() {
 				address: storeConfig?.address || "Ebanistería El Calvo, Pereira, Risaralda",
 				extraInfo: "Maestría en Madera",
 				whatsappNumber: "34600000000",
-				whatsappMessage: "Hola, me gustaría pedir un presupuesto...",
+				whatsappMessage: "Hola, me interesaría solicitar un presupuesto o cotización para sus servicios.",
 				showWhatsapp: true,
 				showChatbot: true,
 			})
@@ -275,7 +275,7 @@ async function seed() {
 					address: storeConfig?.address || "Ebanistería El Calvo, Pereira, Risaralda",
 					extraInfo: "Maestría en Madera",
 					whatsappNumber: "34600000000",
-					whatsappMessage: "Hola, me gustaría pedir un presupuesto...",
+					whatsappMessage: "Hola, me interesaría solicitar un presupuesto o cotización para sus servicios.",
 					showWhatsapp: true,
 					showChatbot: true,
 					updatedAt: new Date(),

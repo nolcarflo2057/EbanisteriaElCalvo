@@ -274,7 +274,9 @@ Reglas estrictas:
 1) NUNCA inventes información, precios, direcciones o servicios que no estén explícitamente en el CONTEXTO. Si te preguntan algo que no está en el CONTEXTO, usa SIEMPRE la herramienta needsHuman.
 2) Sé empático, comercial y resuelve las dudas del cliente con un tono premium.
 3) Adapta la información del contexto para que suene natural. Usa emojis con elegancia.
-4) Responde SIEMPRE en español.${opts.extraSystemPrompt ? `\n\nInstrucciones adicionales: ${opts.extraSystemPrompt}` : ""}`;
+4) Responde SIEMPRE en español.
+5) Si te preguntan por "ubicación", "dónde están" o "dirección", responde con la "Dirección" provista en el CONTEXTO, sin importar si es una dirección exacta o solo una ciudad/región.
+6) IMPORTANTE: Escribe ÚNICAMENTE el mensaje final que leerá el cliente. NO incluyas tu proceso de pensamiento, ni análisis, ni texto en inglés al inicio.${opts.extraSystemPrompt ? `\n\nInstrucciones adicionales: ${opts.extraSystemPrompt}` : ""}`;
 
 	const res = await fetch(OPENROUTER_URL, {
 		method: "POST",
@@ -314,7 +316,15 @@ Reglas estrictas:
 
 	// Si el modelo dio una respuesta natural basada en el contexto
 	if (msg?.content && msg.content.trim().length > 0) {
-		return { content: msg.content, usedAi: true };
+		let finalContent = msg.content;
+		// Remover bloques <think> generados por modelos de razonamiento (ej: DeepSeek-R1)
+		finalContent = finalContent.replace(/<think>[\s\S]*?<\/think>\n*/g, "").trim();
+		// Si el modelo no usó tags pero igual puso su razonamiento en inglés, esto ayuda a limpiarlo parcialmente, 
+		// pero la instrucción en el prompt es la principal defensa.
+		
+		if (finalContent.length > 0) {
+			return { content: finalContent, usedAi: true };
+		}
 	}
 
 	// Fallback
@@ -365,7 +375,24 @@ export class ChatService {
 		let usedAi = false;
 		let matchedTag = false;
 
-		if (mode === "advanced") {
+		const { buildDefaultChatbotTags } = await import("./chatbot.constants");
+		const tagsToMatch = config?.chatbotTags?.length
+			? config.chatbotTags
+			: buildDefaultChatbotTags({
+					businessName: config?.businessName,
+					hours: config?.hours,
+					address: config?.address,
+					phone: config?.phone,
+					whatsappNumber: config?.whatsappNumber,
+			  });
+
+		const normalizeMatch = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+		const exactMatch = tagsToMatch.find((t) => normalizeMatch(t.tag) === normalizeMatch(message));
+
+		if (exactMatch && exactMatch.response) {
+			agentContent = exactMatch.response;
+			matchedTag = true;
+		} else if (mode === "advanced") {
 			try {
 				const model = config?.aiModel || DEFAULT_FREE_MODEL;
 				const knowledge = await ChatbotKnowledgeService.getContextText(tenantId);

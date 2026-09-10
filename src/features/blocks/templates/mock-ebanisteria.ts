@@ -192,10 +192,10 @@ export const whiteLabelConfig = {
 	businessName: BRAND,
 	hours: "Lunes a Viernes: 9:00 - 18:00",
 	phone: "+57 312 760 9748",
-	address: "Ebanistería El Calvo, Pereira, Risaralda",
+	address: "Calle 14 # 23-56, Centro, Pereira, Risaralda",
 	extraInfo: "Maestría en Madera",
 	whatsappNumber: "573127609748",
-	whatsappMessage: "Hola, me gustaría pedir un presupuesto...",
+	whatsappMessage: "Hola, me interesaría solicitar un presupuesto o cotización para sus servicios.",
 	showWhatsapp: true,
 	showChatbot: false,
 };
