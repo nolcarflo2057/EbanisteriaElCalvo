@@ -375,7 +375,7 @@ export class ChatService {
 		let usedAi = false;
 		let matchedTag = false;
 
-		const { buildDefaultChatbotTags } = await import("./chatbot.constants");
+		const { buildDefaultChatbotTags } = await import("../constants/chatbot.constants");
 		const tagsToMatch = config?.chatbotTags?.length
 			? config.chatbotTags
 			: buildDefaultChatbotTags({
