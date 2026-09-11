@@ -178,7 +178,7 @@ export function FooterClient({ props }: Props) {
 							</div>
 							<div className="flex items-center gap-2">
 								<span className="material-symbols-outlined text-sm">schedule</span>
-								<span className="text-sm">Lunes a Viernes: 9:00 - 18:00</span>
+								<span className="text-sm">Lun a Vie: 8:00 - 18:00, Sáb: 8:00 - 14:00</span>
 							</div>
 							<div className="flex items-center gap-2">
 								<span className="material-symbols-outlined text-sm">call</span>

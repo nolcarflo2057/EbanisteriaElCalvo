@@ -120,7 +120,7 @@ export const locationHoursProps: LocationHoursBlockProps = {
 	description:
 		"Desde nuestro taller en Perla del Sur, sector de Cuba, Pereira, trabajamos la madera para restaurar, transformar y crear soluciones pensadas para cada espacio.\n\nRestauramos muebles que merecen una nueva oportunidad y también diseñamos y fabricamos cocinas, clósets, puertas y proyectos a medida, buscando siempre una solución que se adapte a lo que necesitas.\n\nCuéntanos tu proyecto y encontremos juntos la mejor manera de hacerlo realidad.",
 	address: "Manzana D Casa 142 esquina, Barrio Atenas - Sector Perla del Sur, Pereira",
-	schedule: "Lunes a Viernes: 9:00 - 18:00",
+	schedule: "Lun a Vie: 8:00 - 18:00, Sáb: 8:00 - 14:00",
 	phone: "+57 312 760 9748",
 	mapEmbedUrl:
 		"https://maps.google.com/maps?q=Ebanisteria%20El%20Calvo,%20Pereira,%20Risaralda&t=&z=17&ie=UTF8&iwloc=&output=embed",
@@ -191,7 +191,7 @@ export const footerProps: FooterBlockProps = {
 
 export const whiteLabelConfig = {
 	businessName: BRAND,
-	hours: "Lunes a Viernes: 9:00 - 18:00",
+	hours: "Lun a Vie: 8:00 - 18:00, Sáb: 8:00 - 14:00",
 	phone: "+57 312 760 9748",
 	address: "Manzana D Casa 142 esquina, Barrio Atenas - Sector Perla del Sur, Pereira",
 	extraInfo: "Maestría en Madera",
