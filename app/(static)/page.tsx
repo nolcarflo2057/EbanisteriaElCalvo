@@ -8,6 +8,7 @@ import { LandingHero } from "@/features/landing/components/landing-hero/landing-
 import { LandingGallery } from "@/features/landing/components/landing-gallery/landing-gallery";
 import { FooterClient } from "@/features/blocks/blocks/footer/footer-client";
 import { ContactFormClient } from "@/features/blocks/blocks/contact-form/contact-form-client";
+import { ScrollReveal } from "@/shared/components/ui/ScrollReveal";
 
 import { cn } from "@/shared/utils/cn";
 import {
@@ -139,18 +140,18 @@ function ServicesGridStatic() {
 					{p.services?.map((service, i) => (
 						<div
 							key={i}
-							className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-primary/5 flex flex-col items-start group"
+							className="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-primary/5 flex flex-col items-start group cursor-default"
 						>
 							<div
 								className={cn(
-									"w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-colors group-hover:bg-primary group-hover:text-white",
+									"w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-white",
 									service.iconBg ? `bg-[${service.iconBg}]/10 text-[${service.iconBg}]` : "bg-primary/10 text-primary",
 								)}
 							>
 								<span className="material-symbols-outlined text-xl">{service.icon}</span>
 							</div>
-							<h3 className="font-headline-sm text-headline-sm mb-3 text-primary">{service.title}</h3>
-							<p className="text-on-surface-variant font-body-md">{service.description}</p>
+							<h3 className="font-headline-sm text-headline-sm mb-3 text-primary group-hover:text-secondary transition-colors duration-300">{service.title}</h3>
+							<p className="text-on-surface-variant font-body-md leading-relaxed">{service.description}</p>
 						</div>
 					))}
 				</div>
@@ -174,16 +175,16 @@ function ArtisanShowcaseStatic() {
 		<section className={cn("py-12 md:py-24 overflow-hidden", backgroundClass)} id="artesano">
 			<div className="max-w-[1400px] mx-auto px-4 md:px-10">
 				<div className={cn("grid md:grid-cols-2 gap-16 items-stretch", isImageLeft ? "" : "md:flex-row-reverse")}>
-					<div className="relative h-full min-h-[400px]">
-						<div className="h-full rounded-2xl overflow-hidden shadow-2xl relative z-10">
+					<div className="relative h-full min-h-[400px] group overflow-hidden rounded-2xl">
+						<div className="h-full w-full rounded-2xl overflow-hidden shadow-2xl relative z-10 transition-transform duration-700 ease-out group-hover:scale-105">
 							<Image
-  alt={p.imageAlt}
-  src={p.image}
-  fill
-  sizes="100vw"
-  className="object-cover"
-  unoptimized={p.image.startsWith("http")}
-/>
+								alt={p.imageAlt}
+								src={p.image}
+								fill
+								sizes="100vw"
+								className="object-cover"
+								unoptimized={p.image.startsWith("http")}
+							/>
 						</div>
 						<div className="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl -z-10" />
 						<div className="absolute -top-8 -left-8 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl -z-10" />
@@ -232,16 +233,26 @@ export default function StaticPage() {
 						ctaLabel={hero.ctaLabel}
 						ctaHref={hero.ctaHref}
 					/>
-					<ServicesGridStatic />
-					<ArtisanShowcaseStatic />
-					<LandingGallery
-						title={gallery.title}
-						subtitle={gallery.subtitle}
-						description={gallery.description}
-						images={gallery.images}
-					/>
-					<LocationHoursStatic />
-					<ContactFormClient props={contact} />
+					<ScrollReveal>
+						<ServicesGridStatic />
+					</ScrollReveal>
+					<ScrollReveal>
+						<ArtisanShowcaseStatic />
+					</ScrollReveal>
+					<ScrollReveal>
+						<LandingGallery
+							title={gallery.title}
+							subtitle={gallery.subtitle}
+							description={gallery.description}
+							images={gallery.images}
+						/>
+					</ScrollReveal>
+					<ScrollReveal>
+						<LocationHoursStatic />
+					</ScrollReveal>
+					<ScrollReveal>
+						<ContactFormClient props={contact} />
+					</ScrollReveal>
 				</main>
 				<FooterClient props={footer} />
 			</StoreConfigProvider>

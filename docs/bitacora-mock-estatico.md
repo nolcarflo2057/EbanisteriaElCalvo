@@ -151,3 +151,31 @@ En pantallas grandes (Desktop), el diseño se sentía muy encajonado debido a un
 1. **Ancho Máximo Extendido:** Se ejecutó un reemplazo masivo en los componentes (`src/features/blocks` y `app/(static)/page.tsx`) cambiando `max-w-[1200px]` por `max-w-[1400px]`. Esto le da al diseño 200px más de "respiración" horizontal, reduciendo la altura total de los bloques y los saltos de línea molestos.
 2. **Reestructuración del Footer:** Se abandonó `flex justify-between` en favor de un Grid de 3 columnas (`grid-cols-1 md:grid-cols-3`) para el `footer-client.tsx`. Esto ancla los enlaces en el centro absoluto y mantiene los íconos de redes a la derecha, logrando un balance visual mucho más robusto en monitores ultra anchos.
 3. **Simetría de Imágenes (Artisan Showcase):** Se cambió `items-center` por `items-stretch` en la cuadrícula de los bloques divididos y se configuró la imagen para que use `h-full`. Esto asegura que la imagen siempre crezca para igualar exactamente la altura del texto, manteniendo la simetría perfecta.
+
+---
+
+## ✨ Micro-animaciones y Scroll Reveal
+
+**Fecha:** 2026-09-10
+
+**Contexto:** Cumpliendo con los lineamientos de UI premium ("Dynamic Design"), los bloques estáticos carecían de dinamismo y se sentían demasiado rígidos.
+
+**Solución Implementada:**
+1. **Animaciones de Hover (Micro-animaciones):** Se añadieron clases de transición nativas de Tailwind a los elementos interactivos o destacados en `app/(static)/page.tsx`. 
+   - Las tarjetas de servicios se elevan (`-translate-y-2`) y expanden su sombra (`shadow-xl`) en hover.
+   - La imagen destacada (Artisan Showcase) hace un sutil zoom-in (`scale-105 duration-700`) al hacer hover en su contenedor.
+2. **Scroll Reveal (IntersectionObserver):** Se desarrolló el componente `src/shared/components/ui/ScrollReveal.tsx`. Este es un wrapper ultra ligero (sin `framer-motion`) que utiliza la API nativa de Intersection Observer para detectar cuándo un bloque entra en la pantalla y desencadenar un efecto *fade-in-up* (`opacity-0 translate-y-12` -> `opacity-100 translate-y-0`).
+
+**Implementación:** Se envolvió cada bloque estático del `main` en `app/(static)/page.tsx` dentro de `<ScrollReveal>`. 
+
+---
+
+## 🤖 Fix: Chatbot Data Fallback (whiteLabelConfig)
+
+**Fecha:** 2026-09-10
+
+**Problema:** El agente de IA respondía repetitivamente a consultas de ubicación con una dirección genérica (Calle 14...), a pesar de haber modificado `locationHoursProps` en la data estática (`mock-ebanisteria.ts`).
+
+**Diagnóstico:** El servicio del chatbot en `chat.service.ts` extrae su data base de la constante de DB (vía `getWhiteLabelConfig`). Sin embargo, en entornos locales sin DB, la aplicación recurre a un bloque aislado al final de `mock-ebanisteria.ts` exportado como `whiteLabelConfig`, el cual mantenía texto hardcodeado viejo.
+
+**Solución:** Se actualizó `whiteLabelConfig.address` en la maqueta estática para reflejar la dirección real: *"Manzana D Casa 142 esquina, Barrio Atenas - Sector Perla del Sur, Pereira"*. Se instruye que cualquier cambio similar en Producción debe hacerse editando la variable `address` en el panel de configuración del negocio (SettingsService/WhiteLabel).
