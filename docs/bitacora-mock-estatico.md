@@ -137,3 +137,17 @@ Para arreglar problemas visuales o de renderizado en la página de inicio, se de
 Cualquier mejora en la UI de los "Bloques" debe ser aplicada **dos veces** si dicha mejora se desea ver en el home público:
 1. En el bloque real (ej: `src/features/blocks/blocks/artisan-showcase/artisan-showcase.block.tsx`) para cuando se usa vía CMS o páginas dinámicas.
 2. En la versión inlined (ej: `app/(static)/page.tsx`) para la portada estática actual.
+
+---
+
+## 🎨 Mejoras Globales de UI y Layout (Desktop)
+
+**Fecha:** 2026-09-10
+
+**Problema:**
+En pantallas grandes (Desktop), el diseño se sentía muy encajonado debido a un límite rígido de 1200px. Esto causaba que los textos tuvieran excesivos saltos de línea (verticalizando demasiado los bloques) y que elementos como el Footer (`flex justify-between`) dejaran enormes vacíos en el centro.
+
+**Solución Implementada:**
+1. **Ancho Máximo Extendido:** Se ejecutó un reemplazo masivo en los componentes (`src/features/blocks` y `app/(static)/page.tsx`) cambiando `max-w-[1200px]` por `max-w-[1400px]`. Esto le da al diseño 200px más de "respiración" horizontal, reduciendo la altura total de los bloques y los saltos de línea molestos.
+2. **Reestructuración del Footer:** Se abandonó `flex justify-between` en favor de un Grid de 3 columnas (`grid-cols-1 md:grid-cols-3`) para el `footer-client.tsx`. Esto ancla los enlaces en el centro absoluto y mantiene los íconos de redes a la derecha, logrando un balance visual mucho más robusto en monitores ultra anchos.
+3. **Simetría de Imágenes (Artisan Showcase):** Se cambió `items-center` por `items-stretch` en la cuadrícula de los bloques divididos y se configuró la imagen para que use `h-full`. Esto asegura que la imagen siempre crezca para igualar exactamente la altura del texto, manteniendo la simetría perfecta.

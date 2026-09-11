@@ -135,27 +135,26 @@ export function FooterClient({ props }: Props) {
 			<footer className="bg-primary">
 				<div className="max-w-[1400px] mx-auto px-4 md:px-margin-desktop py-12 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
 					{/* Brand + Copyright */}
-					<div className="flex flex-col items-center md:items-start gap-4 md:col-span-1">
+					<div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:col-span-1">
 						{props.logo && (
-							<div className="w-full flex justify-center md:justify-start">
+							<div className="flex-shrink-0">
 								<img 
 									src={props.logo} 
 									alt={`Logo ${props.brand || "Marca"}`} 
-									className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-2xl shadow-md border-2 border-white/10" 
+									className="w-20 h-20 object-cover rounded-2xl shadow-md border-2 border-white/10" 
 								/>
 							</div>
 						)}
-						<span className="font-headline-sm text-headline-sm text-white text-center md:text-left w-full">
-							{props.brand}
-						</span>
-						{props.tagline && (
-							<p className="font-label-sm text-label-sm text-white/70 -mt-2 text-center md:text-left w-full whitespace-pre-line">
-								{props.tagline}
-							</p>
-						)}
-						<p className="font-label-sm text-label-sm text-white/90 text-center md:text-left w-full">
-							{props.copyright}
-						</p>
+						<div className="flex flex-col items-center md:items-start text-center md:text-left gap-1 mt-1">
+							<span className="font-headline-sm text-headline-sm text-white w-full">
+								{props.brand}
+							</span>
+							{props.tagline && (
+								<p className="font-label-sm text-label-sm text-white/70 w-full whitespace-pre-line leading-relaxed">
+									{props.tagline}
+								</p>
+							)}
+						</div>
 					</div>
 
 					{/* Navigation links */}
@@ -208,8 +207,11 @@ export function FooterClient({ props }: Props) {
 				</div>
 			</footer>
 
-			<div className="bg-primary py-4 text-center">
-				<p className="mt-2 text-xs text-white">Desarrollado por{" "}<a href="https://jhonatanc-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{color:"#feb300"}}>JhonatanCardona.dev</a></p>
+			<div className="bg-primary py-6 text-center border-t border-white/10 flex flex-col items-center justify-center gap-2">
+				<p className="font-label-sm text-label-sm text-white/90">
+					{props.copyright}
+				</p>
+				<p className="text-xs text-white/70">Desarrollado por{" "}<a href="https://jhonatanc-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{color:"#feb300"}}>JhonatanCardona.dev</a></p>
 			</div>
 
 			{/* ── Share Modal: Bottom sheet on mobile, centered on desktop ── */}
