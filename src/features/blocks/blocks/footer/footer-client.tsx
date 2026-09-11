@@ -133,9 +133,9 @@ export function FooterClient({ props }: Props) {
 	return (
 		<>
 			<footer className="bg-primary">
-				<div className="max-w-[1400px] mx-auto px-margin-desktop py-12 flex max-md:flex-col md:flex-row justify-between items-center gap-gutter">
+				<div className="max-w-[1400px] mx-auto px-4 md:px-margin-desktop py-12 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
 					{/* Brand + Copyright */}
-					<div className="flex flex-col items-center md:items-start gap-4">
+					<div className="flex flex-col items-center md:items-start gap-4 md:col-span-1">
 						{props.logo && (
 							<div className="w-full flex justify-center md:justify-start">
 								<img 
@@ -159,7 +159,7 @@ export function FooterClient({ props }: Props) {
 					</div>
 
 					{/* Navigation links */}
-					<div className="flex flex-wrap justify-center gap-8">
+					<div className="flex flex-wrap justify-center gap-8 md:col-span-1">
 						{links.map((link) => (
 							<a
 								key={link.href + link.label}
@@ -172,7 +172,7 @@ export function FooterClient({ props }: Props) {
 					</div>
 
 					{/* Icon action buttons */}
-					<div className="flex gap-4">
+					<div className="flex gap-4 justify-center md:justify-end md:col-span-1">
 						{iconButtons.map((btn) => {
 							if (btn.icon === "share") {
 								return (
