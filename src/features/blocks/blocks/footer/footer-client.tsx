@@ -154,31 +154,63 @@ export function FooterClient({ props }: Props) {
 									{props.tagline}
 								</p>
 							)}
+							<p className="font-bold text-white w-full mt-1">Hecho en Pereira, para tu espacio.</p>
 						</div>
 					</div>
 
-					{/* Navigation links */}
-					<div className="flex flex-wrap justify-center gap-8 md:col-span-1">
-						{links.map((link) => (
-							<a
-								key={link.href + link.label}
-								className="font-label-sm text-label-sm text-white/90 hover:text-secondary-container transition-colors"
-								href={link.href}
-							>
-								{link.label}
-							</a>
-						))}
+					{/* Navigation links + Contact info */}
+					<div className="flex flex-col items-center gap-6 md:col-span-1">
+						<div className="flex flex-wrap justify-center gap-8">
+							{links.map((link) => (
+								<a
+									key={link.href + link.label}
+									className="font-label-sm text-label-sm text-white/90 hover:text-secondary-container transition-colors"
+									href={link.href}
+								>
+									{link.label}
+								</a>
+							))}
+						</div>
+						<div className="flex flex-col items-center gap-2 text-white/80">
+							<div className="flex items-center gap-2">
+								<span className="material-symbols-outlined text-sm">map</span>
+								<span className="text-sm">Mz D Cs 142, Br Atenas - Sector Perla del Sur / Cuba</span>
+							</div>
+							<div className="flex items-center gap-2">
+								<span className="material-symbols-outlined text-sm">schedule</span>
+								<span className="text-sm">Lunes a Viernes: 9:00 - 18:00</span>
+							</div>
+							<div className="flex items-center gap-2">
+								<span className="material-symbols-outlined text-sm">call</span>
+								<span className="text-sm">+57 312 760 9748</span>
+							</div>
+						</div>
 					</div>
 
 					{/* Icon action buttons */}
-					<div className="flex gap-4 justify-center md:justify-end md:col-span-1">
-						{iconButtons.map((btn) => {
-							if (btn.icon === "share") {
+					<div className="flex flex-col items-center md:items-end gap-4 md:col-span-1">
+						<div className="flex gap-4">
+							{iconButtons.map((btn) => {
+								if (btn.icon === "share") {
+									return (
+										<button
+											key={btn.icon}
+											type="button"
+											onClick={handleShare}
+											aria-label={btn.label}
+											title={btn.label}
+											className="group w-10 h-10 rounded-full border border-white/30 bg-white/10 flex items-center justify-center hover:bg-secondary-container hover:border-secondary-container hover:text-on-secondary-container active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-primary transition-all duration-200 cursor-pointer"
+										>
+											<span className="material-symbols-outlined text-white group-hover:text-on-secondary-container text-[20px]">
+												{btn.icon}
+											</span>
+										</button>
+									);
+								}
 								return (
-									<button
+									<a
 										key={btn.icon}
-										type="button"
-										onClick={handleShare}
+										href={btn.href}
 										aria-label={btn.label}
 										title={btn.label}
 										className="group w-10 h-10 rounded-full border border-white/30 bg-white/10 flex items-center justify-center hover:bg-secondary-container hover:border-secondary-container hover:text-on-secondary-container active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-primary transition-all duration-200 cursor-pointer"
@@ -186,32 +218,24 @@ export function FooterClient({ props }: Props) {
 										<span className="material-symbols-outlined text-white group-hover:text-on-secondary-container text-[20px]">
 											{btn.icon}
 										</span>
-									</button>
+									</a>
 								);
-							}
-							return (
-								<a
-									key={btn.icon}
-									href={btn.href}
-									aria-label={btn.label}
-									title={btn.label}
-									className="group w-10 h-10 rounded-full border border-white/30 bg-white/10 flex items-center justify-center hover:bg-secondary-container hover:border-secondary-container hover:text-on-secondary-container active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-primary transition-all duration-200 cursor-pointer"
-								>
-									<span className="material-symbols-outlined text-white group-hover:text-on-secondary-container text-[20px]">
-										{btn.icon}
-									</span>
-								</a>
-							);
-						})}
+							})}
+						</div>
 					</div>
 				</div>
 			</footer>
 
 			<div className="bg-primary py-6 text-center border-t border-white/10 flex flex-col items-center justify-center gap-2">
-				<p className="font-label-sm text-label-sm text-white/90">
-					{props.copyright}
-				</p>
-				<p className="text-xs text-white/70">Desarrollado por{" "}<a href="https://jhonatanc-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{color:"#feb300"}}>JhonatanCardona.dev</a></p>
+				<div className="flex flex-col gap-1">
+					<p className="font-label-sm text-label-sm text-white/90">
+						{props.copyright}
+					</p>
+					<p className="font-label-sm text-label-sm text-white/90">
+						Pereira - Risaralda
+					</p>
+				</div>
+				<p className="text-xs text-white/70 mt-2">Desarrollado por{" "}<a href="https://jhonatanc-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{color:"#feb300"}}>JhonatanCardona.dev</a></p>
 			</div>
 
 			{/* ── Share Modal: Bottom sheet on mobile, centered on desktop ── */}
