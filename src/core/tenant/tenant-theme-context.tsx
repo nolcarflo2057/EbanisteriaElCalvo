@@ -27,3 +27,5 @@ export function TenantThemeProvider({
 export function useTenantThemeContext(): TenantThemeConfig | null {
 	return useContext(TenantThemeContext);
 }
+
+

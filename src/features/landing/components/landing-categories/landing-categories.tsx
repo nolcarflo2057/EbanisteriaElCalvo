@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import type { LandingCategoriesProps } from "./landing-categories.types";
 import { useLandingCategories } from "./useLandingCategories";
@@ -9,7 +9,7 @@ export function LandingCategories({ categories }: LandingCategoriesProps) {
 
 	return (
 		<section className="py-16 bg-background">
-			<div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+			<div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 					{categories.map((cat, i) => (
 						<Link
@@ -39,3 +39,5 @@ export function LandingCategories({ categories }: LandingCategoriesProps) {
 		</section>
 	);
 }
+
+

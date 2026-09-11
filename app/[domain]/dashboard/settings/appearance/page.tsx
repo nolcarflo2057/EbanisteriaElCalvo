@@ -13,3 +13,4 @@ export default async function AppearanceSettingsPage() {
 
 	return <AppearanceSettingsForm initialData={appearance} />;
 }
+

@@ -17,13 +17,15 @@ export const artisanShowcaseBlock: BlockDefinition<ArtisanShowcaseBlockProps> = 
 			accent: "bg-accent text-on-accent",
 		}[props.background ?? "light"];
 
+		console.log("ARTISAN SHOWCASE DESCRIPTION:", JSON.stringify(props.description));
+
 		return (
 			<section className={cn("py-12 md:py-24 overflow-hidden", backgroundClass)} id="artesano">
-				<div className="max-w-[1200px] mx-auto px-4 md:px-10">
-					<div className={cn("grid md:grid-cols-2 gap-16 items-center", isImageLeft ? "" : "md:flex-row-reverse")}>
+				<div className="max-w-[1400px] mx-auto px-4 md:px-10">
+					<div className={cn("grid md:grid-cols-2 gap-16 items-stretch", isImageLeft ? "" : "md:flex-row-reverse")}>
 						{/* Image Column */}
-						<div className="relative">
-							<div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+						<div className="relative h-full min-h-[400px]">
+							<div className="h-full rounded-2xl overflow-hidden shadow-2xl relative z-10">
 								<Image
 									alt={props.imageAlt}
 									src={props.image}
@@ -38,7 +40,7 @@ export const artisanShowcaseBlock: BlockDefinition<ArtisanShowcaseBlockProps> = 
 						</div>
 
 						{/* Content Column */}
-						<div>
+						<div className="flex flex-col justify-center">
 							{props.badge && (
 								<span className="text-secondary font-label-md uppercase tracking-widest block mb-4">
 									{props.badge}
@@ -47,9 +49,11 @@ export const artisanShowcaseBlock: BlockDefinition<ArtisanShowcaseBlockProps> = 
 							<h2 className="font-headline-md text-headline-md mb-6 text-primary">
 								{props.title}
 							</h2>
-							<p className="font-body-md text-on-surface-variant mb-8">
-								{props.description}
-							</p>
+							<div className="font-body-md text-on-surface-variant mb-8 space-y-4">
+								{props.description?.split(/(?:\r?\n|\\n|<br\s*\/?>)+/i).map((paragraph, index) => (
+									paragraph.trim() ? <p key={index}>{paragraph.trim()}</p> : null
+								))}
+							</div>
 
 							{props.badgeContent && (
 								<div className="flex items-center gap-6 p-6 bg-white rounded-xl shadow-sm border border-outline-variant">
@@ -75,3 +79,5 @@ export const artisanShowcaseBlock: BlockDefinition<ArtisanShowcaseBlockProps> = 
 	},
 	defaultProps: artisanShowcaseDefaultProps,
 };
+
+

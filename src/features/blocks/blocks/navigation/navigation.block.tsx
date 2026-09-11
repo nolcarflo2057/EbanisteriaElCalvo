@@ -9,3 +9,5 @@ export const navigationBlock: BlockDefinition<NavigationBlockProps> = {
 	},
 	defaultProps: navigationDefaultProps,
 };
+
+

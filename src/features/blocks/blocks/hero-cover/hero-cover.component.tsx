@@ -44,3 +44,4 @@ export function HeroCoverComponent({ props }: { props: HeroCoverProps }) {
 		</section>
 	);
 }
+

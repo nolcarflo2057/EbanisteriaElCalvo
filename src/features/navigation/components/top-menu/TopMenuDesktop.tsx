@@ -74,3 +74,5 @@ export function TopMenuDesktop({ categories, activeCategoryName }: Props) {
     </div>
   );
 }
+
+

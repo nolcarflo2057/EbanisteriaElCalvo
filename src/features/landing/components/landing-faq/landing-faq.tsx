@@ -1,4 +1,4 @@
-﻿import type { LandingFaqProps } from "./landing-faq.types";
+import type { LandingFaqProps } from "./landing-faq.types";
 import { useLandingFaq } from "./useLandingFaq";
 
 export function LandingFaq({ title, subtitle, items }: LandingFaqProps) {
@@ -29,3 +29,5 @@ export function LandingFaq({ title, subtitle, items }: LandingFaqProps) {
 		</section>
 	);
 }
+
+

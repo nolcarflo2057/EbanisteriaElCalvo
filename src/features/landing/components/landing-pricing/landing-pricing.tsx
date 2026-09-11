@@ -1,4 +1,4 @@
-﻿import { cn } from "@/shared/utils/cn";
+import { cn } from "@/shared/utils/cn";
 import type { LandingPricingProps } from "./landing-pricing.types";
 import { useLandingPricing } from "./useLandingPricing";
 
@@ -26,7 +26,7 @@ export function LandingPricing({ title, subtitle, plans }: LandingPricingProps) 
 						>
 							{plan.highlighted && (
 								<span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-background text-primary text-xs font-bold px-4 py-1 shadow-sm">
-									MÃ¡s popular
+									Más popular
 								</span>
 							)}
 							<h3 className="text-lg font-bold">{plan.name}</h3>
@@ -42,7 +42,7 @@ export function LandingPricing({ title, subtitle, plans }: LandingPricingProps) 
 							<ul className="mt-6 space-y-3 flex-1">
 								{plan.features.map((feature) => (
 									<li key={feature} className="flex items-start gap-2 text-sm">
-										<span className={cn("mt-0.5", plan.highlighted ? "text-primary-foreground" : "text-primary")}>âœ“</span>
+										<span className={cn("mt-0.5", plan.highlighted ? "text-primary-foreground" : "text-primary")}>✓</span>
 										<span className={plan.highlighted ? "text-primary-foreground/90" : "text-foreground"}>{feature}</span>
 									</li>
 								))}
@@ -65,3 +65,5 @@ export function LandingPricing({ title, subtitle, plans }: LandingPricingProps) 
 		</section>
 	);
 }
+
+

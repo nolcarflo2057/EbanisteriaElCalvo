@@ -1,4 +1,4 @@
-﻿import type { LandingStatsProps } from "./landing-stats.types";
+import type { LandingStatsProps } from "./landing-stats.types";
 import { useLandingStats } from "./useLandingStats";
 
 export function LandingStats({ title, stats }: LandingStatsProps) {
@@ -23,3 +23,5 @@ export function LandingStats({ title, stats }: LandingStatsProps) {
 		</section>
 	);
 }
+
+

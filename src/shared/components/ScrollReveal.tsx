@@ -51,3 +51,5 @@ export function ScrollReveal({ children, delay = 0, duration = 800, className = 
 		</div>
 	);
 }
+
+

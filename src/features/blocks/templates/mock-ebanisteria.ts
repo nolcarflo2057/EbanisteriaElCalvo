@@ -21,15 +21,15 @@ export const navigationProps: NavigationBlockProps = {
 };
 
 export const heroProps: HeroBlockProps = {
-	title: "Tus muebles tienen historia. Nosotros les damos una nueva vida",
+	title: "Tu mueble tiene una historia. Dale una nueva oportunidad",
 	subtitle:
-		"Rescatamos la historia de tus piezas con acabados de primera. Además, diseñamos y fabricamos soluciones a medida para tu hogar: modernas cocinas integrales, clósets y puertas de alta calidad.",
+		"Restauramos y renovamos tus muebles para que vuelvan a hacer parte de tus espacios. Conservamos lo que los hace especiales y les damos un estilo renovado y funcional.",
 	ctaLabel: "Contáctanos ahora",
 	ctaHref: "#contacto",
 	bgImage:
 		"https://lh3.googleusercontent.com/aida-public/AB6AXuDsf2gE4yozlKT3nJY-WKWevRPgwid8Twb_v15Hb8p0_47EdMm6ZsFoaYse4r730ChsgzFpkRKl-YEO2sbr16j9mHBv8TBo7NkxoTGEdV5SIijNTAbAQtpWsleml352OW4FP7pDVJ8BUufQr1jLFPxIiFaG4wfezZR6_RkxvbSi_NxgVGpGBQmAbSzCfzdBz39Kddc81wJgxb-y4ppQDPmExZxOWIO9n8fzYZub3wB7p8tvNlpPKAxnhw",
 	bgAlt: "Taller de restauración con muebles antiguos",
-	badge: "Restauración & Carpintería Arquitectónica",
+	badge: "Restauración de Muebles & Ebanistería",
 };
 
 export const servicesGridProps: ServicesGridBlockProps = {
@@ -41,28 +41,28 @@ export const servicesGridProps: ServicesGridBlockProps = {
 			icon: "auto_fix",
 			title: "Restauración de Muebles",
 			description:
-				"Recuperamos el esplendor de tus muebles y antigüedades respetando su historia y esencia.",
+				"Restauramos y renovamos tus muebles conservando su esencia, recuperando sus acabados y adaptándolos a nuevos espacios y necesidades.",
 			iconBg: "#442a22",
 		},
 		{
 			icon: "countertops",
 			title: "Cocinas Integrales",
 			description:
-				"Diseñamos y fabricamos la cocina de tus sueños, optimizando cada espacio con acabados modernos y duraderos.",
+				"Fabricamos cocinas a medida pensando en la distribución, el uso diario y el estilo que quieres para tu hogar.",
 			iconBg: "#442a22",
 		},
 		{
 			icon: "checkroom",
 			title: "Clósets a Medida",
 			description:
-				"Soluciones de almacenamiento personalizadas que combinan funcionalidad, elegancia y diseño interior.",
+				"Diseñamos y fabricamos soluciones de almacenamiento adaptadas a tu espacio, necesidades y forma de organizarlo.",
 			iconBg: "#442a22",
 		},
 		{
 			icon: "door_front",
-			title: "Puertas y Acabados",
+			title: "Puertas y Otros Trabajos",
 			description:
-				"Fabricación y reparación de puertas, garantizando seguridad y un estilo arquitectónico perfecto para tu hogar.",
+				"Realizamos reparación, restauración y fabricación de puertas y otros elementos de madera para darle continuidad y funcionalidad a tus espacios.",
 			iconBg: "#442a22",
 		},
 	],
@@ -73,23 +73,23 @@ export const artisanShowcaseProps: ArtisanShowcaseBlockProps = {
 	image:
 		"https://lh3.googleusercontent.com/aida-public/AB6AXuCWuBIsFR8zv9780y07s7r3cpOiLDqijZyyCWfJdO9VEpbei7ulqnJ_mpc2ceZpATf5U_g3HZg5GXG8sNFECLlhAncUO8GOqSInW6vaSDmeA_BCSfSF7vJxseHe_KFxUhrXt7SzZ1rktrhRiSsdksS27uR_1MxUOuorPl634ip5TBFAokrJJzcEjopxnxStbnMgFqY_wDHIrrpKtF0nnY4MqboXOod2lv0Bq9mPNEXgC3Ms97GYm5Nd2A",
 	imageAlt: "Maestro restaurador trabajando meticulosamente la madera",
-	badge: "El Maestro Detrás de la Magia",
-	title: "Conoce a El Calvo: Pasión por darle nueva vida a la madera",
+	badge: "UNA HISTORIA HECHA EN PEREIRA",
+	title: "Conoce la historia detrás de Ebanistería El Calvo",
 	description:
-		"Diseñamos carpintería arquitectónica a medida y rescatamos piezas con historia. Con décadas de experiencia sirviendo a nuestra comunidad, entendemos el valor de un trabajo bien hecho. Nuestra misión es crear espacios únicos y preservar el legado de tus muebles con la paciencia y el cuidado que la buena madera merece.",
+		"Todo comenzó en el barrio Perla del Sur, en el sector de Cuba, Pereira, con las ganas de salir adelante de un pereirano que decidió emprender desde su propio hogar, convirtiendo su oficio y pasión por la madera en un pequeño taller.\n\nCon el tiempo, entre muebles, herramientas y proyectos, el maestro fue haciéndose conocido por un nombre que nació de manera sencilla y que muchos en la ciudad aún reconocen: El Calvo.\n\nAsí nació la identidad de Ebanistería El Calvo, un taller donde se restauran muebles, se recuperan piezas que aún tienen mucho por ofrecer y se crean espacios pensados de acuerdo con los gustos y necesidades de cada cliente.\n\nMás que fabricar o reparar, el propósito siempre ha sido escuchar, entender lo que cada persona necesita y poner el oficio al servicio de sus ideas, buscando que cada proyecto encuentre su lugar en el hogar y que el resultado deje la satisfacción de haber hecho una buena elección.\n\nHoy, Ebanistería El Calvo conserva ese espíritu de sus comienzos: un trabajo cercano, hecho con dedicación y con el valor de aprovechar, transformar y darle nuevas oportunidades a la madera.",
 	background: "light",
 	badgeContent: {
 		icon: "verified",
-		label: "Expertos en Restauración",
-		subtitle: "Garantía de cuidado total en cada pieza intervenida.",
+		label: "Ebanistería El Calvo",
+		subtitle: "Un oficio que comenzó en un hogar de Pereira y que hoy sigue tomando forma en cada proyecto.",
 	},
 };
 
 export const galleryProps: GalleryBlockProps = {
-	title: "Galería de Transformaciones",
-	subtitle: "Antes y Después",
+	title: "De una idea a un espacio hecho realidad",
+	subtitle: "Galería",
 	description:
-		"Cada pieza restaurada es un testimonio de nuestra dedicación por rescatar la belleza original oculta por el paso del tiempo.",
+		"Cada proyecto tiene su propia historia. Restauramos muebles que merecen seguir siendo parte de tu hogar, pero también diseñamos y construimos nuevas soluciones en madera para transformar tus espacios.\n\nRestauración, renovación y fabricación a medida: desde un mueble recuperado hasta una cocina, un clóset o una puerta hecha para tu espacio.",
 	images: [
 		{
 			url: "https://lh3.googleusercontent.com/aida-public/AB6AXuCIWSbNpdYuImq7LIX9EGms5YmXdaAaMi7K1w0FAZKhfd8v6YGJKlVU_GzcKcuS262kfz5ien3wZdkZaywFPfsWpOtcn4LWvIOqjJaLXiysGA5CSkwBWFR_C_qorCheNCLJWArK822-eFV3khp2gaqfx11VRmYKhJbsdakffr2EvfqV4Nq6JumDeeUejLj0sPDCLw1L74ZG7SVZiVlzJGIMuj0zt69ZAEiG4QQRrBXNfbJzjVxzqlYZ0Q",
@@ -116,9 +116,9 @@ export const galleryProps: GalleryBlockProps = {
 
 export const locationHoursProps: LocationHoursBlockProps = {
 	icon: "location_on",
-	title: "Tu Taller de Confianza en la Perla del Sur",
+	title: "ESTAMOS EN PERLA DEL SUR",
 	description:
-		"Ponerte en contacto con nosotros es la mejor decisión que puedes tomar. Déjanos asesorarte en tu próximo proyecto de carpintería.",
+		"Desde nuestro taller en Perla del Sur, sector de Cuba, Pereira, trabajamos la madera para restaurar, transformar y crear soluciones pensadas para cada espacio.\n\nRestauramos muebles que merecen una nueva oportunidad y también diseñamos y fabricamos cocinas, clósets, puertas y proyectos a medida, buscando siempre una solución que se adapte a lo que necesitas.\n\nCuéntanos tu proyecto y encontremos juntos la mejor manera de hacerlo realidad.",
 	address: "Ebanistería El Calvo, Pereira, Risaralda",
 	schedule: "Lunes a Viernes: 9:00 - 18:00",
 	phone: "+57 312 760 9748",
@@ -129,14 +129,15 @@ export const locationHoursProps: LocationHoursBlockProps = {
 };
 
 export const contactFormProps: ContactFormBlockProps = {
-	title: "Pide tu presupuesto de Restauración",
+	title: "Cuéntanos qué quieres hacer",
 	description:
-		"Cuéntanos sobre tu mueble. Ya sea la silla del abuelo o las puertas desgastadas de tu casa, te daremos una valoración honesta sobre su rescate.",
+		"Puede ser un mueble que quieres recuperar, una cocina que quieres renovar, un clóset que necesitas aprovechar mejor o una idea nueva para tu hogar.\n\nCuéntanos qué tienes en mente.\nRevisamos las posibilidades, definimos contigo lo que necesitas y te orientamos sobre el trabajo que requiere tu proyecto.",
 	leftBackground: "primary",
 	benefits: [
-		{ icon: "check_circle", text: "Evaluación sin compromiso" },
-		{ icon: "check_circle", text: "Uso de barnices y telas premium" },
-		{ icon: "check_circle", text: "Transporte propio disponible" },
+		{ icon: "check_circle", text: "Asesoría inicial" },
+		{ icon: "check_circle", text: "Trabajos a medida" },
+		{ icon: "check_circle", text: "Restauración y renovación de muebles" },
+		{ icon: "check_circle", text: "Fabricación de cocinas, clósets y otros proyectos" },
 	],
 	fields: [
 		{ key: "nombre", label: "Nombre completo", type: "text", placeholder: "Ej: Juan Pérez", required: true },
@@ -157,13 +158,13 @@ export const contactFormProps: ContactFormBlockProps = {
 		},
 		{ key: "mensaje", label: "Mensaje o detalles (opcional)", type: "textarea", placeholder: "Cuéntanos un poco sobre el estado actual del mueble...", required: false },
 	],
-	submitLabel: "Enviar Solicitud",
+	submitLabel: "Solicitar presupuesto",
 };
 
 export const footerProps: FooterBlockProps = {
 	logo: "/logo.png",
 	brand: "Ebanistería El Calvo",
-	tagline: "Muebles con historia, restaurados con maestría.",
+	tagline: "Restauramos muebles para que sigan\nhaciendo parte de tu historia y fabricamos\nnuevos espacios pensados para tu hogar.",
 	copyright: `© 2026 Ebanistería El Calvo. Perla del Sur.`,
 	linkGroups: [
 		{

@@ -67,3 +67,5 @@ export function WhatsAppConfigCard({ control, register, errors }: Props) {
 		</Card>
 	);
 }
+
+

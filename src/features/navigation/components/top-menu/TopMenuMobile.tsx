@@ -192,3 +192,5 @@ export function TopMenuMobile({ categories, activeCategoryName }: Props) {
     </div>
   );
 }
+
+

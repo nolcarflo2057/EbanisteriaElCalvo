@@ -37,3 +37,5 @@ export default function RootError({ error, reset }: Props) {
 		</div>
 	);
 }
+
+

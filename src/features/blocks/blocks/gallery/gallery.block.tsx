@@ -19,3 +19,5 @@ export const galleryBlock: BlockDefinition<GalleryBlockProps> = {
 	},
 	defaultProps: galleryDefaultProps,
 };
+
+

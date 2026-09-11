@@ -210,3 +210,5 @@ export function LegalesSettingsForm({ initialData }: Props) {
 		</div>
 	);
 }
+
+

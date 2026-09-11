@@ -76,7 +76,7 @@ async function LocationHoursContent({ props, tenantId }: { props: LocationHoursB
 
 	return (
 		<section className="py-12 md:py-24 bg-surface" id="ubicacion">
-			<div className="max-w-[1200px] mx-auto px-4 md:px-margin-desktop">
+			<div className="max-w-[1400px] mx-auto px-4 md:px-margin-desktop">
 				{props.mapEmbedUrl ? (
 					<div className="bg-white rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-5 border border-outline-variant">
 						<div className="relative md:col-span-3 h-full min-h-[380px]">
@@ -140,3 +140,5 @@ export const locationHoursBlock: BlockDefinition<LocationHoursBlockProps> = {
 	Component: ({ props, tenantId }) => <LocationHoursContent props={props} tenantId={tenantId} />,
 	defaultProps: locationHoursDefaultProps,
 };
+
+

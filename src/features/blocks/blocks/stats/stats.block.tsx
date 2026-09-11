@@ -17,3 +17,5 @@ export const statsBlock: BlockDefinition<StatsBlockProps> = {
 	},
 	defaultProps: statsDefaultProps,
 };
+
+

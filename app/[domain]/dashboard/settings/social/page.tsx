@@ -13,3 +13,4 @@ export default async function SocialSettingsPage() {
 
 	return <SocialSettingsForm initialData={social} />;
 }
+

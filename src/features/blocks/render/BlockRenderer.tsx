@@ -36,3 +36,4 @@ export async function BlockRenderer({ instance, tenantId }: { instance: BlockIns
 
 	return <ScrollReveal>{componentNode}</ScrollReveal>;
 }
+

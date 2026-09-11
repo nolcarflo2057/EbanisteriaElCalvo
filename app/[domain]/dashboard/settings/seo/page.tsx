@@ -13,3 +13,4 @@ export default async function SeoSettingsPage() {
 
 	return <SeoSettingsForm initialData={seo} />;
 }
+

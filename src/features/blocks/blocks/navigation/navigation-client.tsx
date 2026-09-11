@@ -19,7 +19,7 @@ export function NavigationClient({ props }: { props: NavigationBlockProps }) {
 
 	return (
 		<nav className="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md dock full-width top-0 sticky z-[1000] shadow-sm w-full">
-			<div className="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20 w-full">
+			<div className="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20 w-full">
 				{/* Logo */}
 				<a className="font-headline-md text-headline-md text-primary tracking-tight" href="#">
 					<h1>{brandName}</h1>
@@ -110,3 +110,5 @@ export function NavigationClient({ props }: { props: NavigationBlockProps }) {
 		</nav>
 	);
 }
+
+

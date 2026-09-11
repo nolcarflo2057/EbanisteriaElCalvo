@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import type { LandingTestimonialsProps } from "./landing-testimonials.types";
 import { useLandingTestimonials } from "./useLandingTestimonials";
 
@@ -7,7 +7,7 @@ function Stars({ rating }: { rating: number }) {
 		<div className="flex gap-0.5" aria-label={`${rating} de 5 estrellas`}>
 			{Array.from({ length: 5 }).map((_, i) => (
 				<span key={i} className={i < rating ? "text-amber-400" : "text-muted"}>
-					â˜…
+					★
 				</span>
 			))}
 		</div>
@@ -59,3 +59,5 @@ export function LandingTestimonials({ title, subtitle, items }: LandingTestimoni
 		</section>
 	);
 }
+
+

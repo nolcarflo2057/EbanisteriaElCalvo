@@ -24,3 +24,5 @@ export const testimonialsBlock: BlockDefinition<TestimonialsBlockProps> = {
 	},
 	defaultProps: testimonialsDefaultProps,
 };
+
+

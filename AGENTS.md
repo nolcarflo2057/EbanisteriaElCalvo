@@ -145,6 +145,7 @@ src/
 - `Pagination` expects `totalPages` prop and reads `page` from URL search params. `useInventoryAdmin` derives `currentPage` from `searchParams.get("page")` and reloads on change.
 - Admin routes use `(admin)` route group; public routes use `(public)`.
 - `better-auth` for authentication; admin checks via role.
+- **Static Page Inlining:** La ruta `app/(static)/page.tsx` (la portada pública `/`) tiene **versiones estáticas inlined** de los bloques (ej. `ArtisanShowcaseStatic`). Modificar los bloques reutilizables en `src/features/blocks/blocks/` **no afectará** la portada estática. Para cambiar la portada pública `/`, debes editar directamente `app/(static)/page.tsx`.
 
 ## ⚠️ ERRORES CRÍTICOS — leer antes de tocar nada (detalle completo: `docs/bitacora-errores-criticos-prevencion.md`)
 1. **`proxy.ts` es el ÚNICO archivo edge permitido.** NUNCA crear `middleware.ts`: si coexisten, el server muere al arrancar (`Unhandled Rejection: Both middleware file and proxy file detected`). Auth guard (`/dashboard`, `/admin`) + tenant resolve + module guard viven fusionados ahí.

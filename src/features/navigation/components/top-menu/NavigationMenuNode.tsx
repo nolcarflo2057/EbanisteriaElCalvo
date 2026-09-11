@@ -49,3 +49,5 @@ export function NavigationMenuNode({ items }: { items: MenuItem[] }) {
     </div>
   );
 }
+
+

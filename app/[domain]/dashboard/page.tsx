@@ -3,3 +3,4 @@ import { DashboardPreview } from "@/features/dashboard/components/DashboardPrevi
 export default function AdminDashboardPage() {
 	return <DashboardPreview />;
 }
+

@@ -20,3 +20,5 @@ export const aboutBlock: BlockDefinition<AboutBlockProps> = {
 	},
 	defaultProps: aboutDefaultProps,
 };
+
+

@@ -13,7 +13,7 @@ export function LandingGallery(props: LandingGalleryProps) {
 			{/* Wood texture overlay following impeccable aesthetic style */}
 			<div className="wood-texture-overlay absolute inset-0"></div>
 
-			<div className="max-w-[1200px] mx-auto px-margin-desktop relative z-10">
+			<div className="max-w-[1400px] mx-auto px-margin-desktop relative z-10">
 				<div className="text-center mb-16">
 					{subtitle && (
 						<span className="text-secondary font-label-md uppercase tracking-widest block mb-2">
@@ -24,7 +24,7 @@ export function LandingGallery(props: LandingGalleryProps) {
 						{title}
 					</h2>
 					{description && (
-						<p className="font-body-md text-on-surface-variant mt-4 max-w-2xl mx-auto">
+						<p className="font-body-md text-on-surface-variant mt-4 max-w-4xl mx-auto">
 							{description}
 						</p>
 					)}
@@ -58,3 +58,5 @@ export function LandingGallery(props: LandingGalleryProps) {
 		</section>
 	);
 }
+
+

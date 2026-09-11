@@ -27,7 +27,7 @@ export function LandingHero({ title, subtitle, ctaLabel, ctaHref, bgImage, bgAlt
 				/>
 				<div className="absolute inset-0 bg-primary/40 sm:bg-primary/20" />
 			</div>
-			<div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 relative z-10 w-full">
+			<div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 relative z-10 w-full">
 				<div className="max-w-xl text-on-primary">
 					{badge && (
 						<span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase bg-on-primary/10 text-on-primary border border-on-primary/25 mb-4 slide-up-fade">
@@ -53,3 +53,5 @@ export function LandingHero({ title, subtitle, ctaLabel, ctaHref, bgImage, bgAlt
 		</section>
 	);
 }
+
+

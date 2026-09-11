@@ -21,3 +21,5 @@ export const categoriesBlock: BlockDefinition<CategoriesBlockProps> = {
 	},
 	defaultProps: categoriesDefaultProps,
 };
+
+

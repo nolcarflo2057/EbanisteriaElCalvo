@@ -18,3 +18,5 @@ export const faqBlock: BlockDefinition<FaqBlockProps> = {
 	},
 	defaultProps: faqDefaultProps,
 };
+
+

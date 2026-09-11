@@ -16,3 +16,4 @@ export const Title = ({ title, subtitle, className }: Props) => {
     </div>
   )
 }
+

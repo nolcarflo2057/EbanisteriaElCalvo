@@ -160,3 +160,4 @@ export function LeadModalDialog({ isOpen, onClose }: Props) {
 		</Dialog>
 	);
 }
+

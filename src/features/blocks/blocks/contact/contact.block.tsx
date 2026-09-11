@@ -26,3 +26,5 @@ export const contactBlock: BlockDefinition<ContactBlockProps> = {
 	},
 	defaultProps: contactDefaultProps,
 };
+
+

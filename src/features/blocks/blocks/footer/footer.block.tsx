@@ -9,3 +9,5 @@ export const footerBlock: BlockDefinition<FooterBlockProps> = {
 	},
 	defaultProps: footerDefaultProps,
 };
+
+

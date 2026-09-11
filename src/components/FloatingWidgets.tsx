@@ -514,3 +514,4 @@ export function FloatingWidgets({ slug }: { slug?: string }) {
     </div>
   );
 }
+

@@ -23,7 +23,7 @@ export const servicesGridBlock: BlockDefinition<ServicesGridBlockProps> = {
 						backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E")`
 					}}
 				/>
-				<div className="max-w-[1200px] mx-auto px-4 md:px-10 relative">
+				<div className="max-w-[1400px] mx-auto px-4 md:px-10 relative">
 					<div className="text-center mb-16">
 						<span className="text-secondary font-label-md uppercase tracking-widest block mb-2">
 							{props.subtitle}
@@ -63,3 +63,5 @@ export const servicesGridBlock: BlockDefinition<ServicesGridBlockProps> = {
 	},
 	defaultProps: servicesGridDefaultProps,
 };
+
+

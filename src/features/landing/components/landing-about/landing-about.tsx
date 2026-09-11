@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import type { LandingAboutProps } from "./landing-about.types";
 import { useLandingAbout } from "./useLandingAbout";
 
@@ -50,3 +50,5 @@ export function LandingAbout({ title, text, image, imagePosition = "right", badg
 		</section>
 	);
 }
+
+

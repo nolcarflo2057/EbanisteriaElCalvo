@@ -14,3 +14,4 @@ export default async function GeneralSettingsPage() {
 
 	return <GeneralSettingsForm initialData={settings} />;
 }
+

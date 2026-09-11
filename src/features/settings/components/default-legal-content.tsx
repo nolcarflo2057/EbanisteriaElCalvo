@@ -142,3 +142,5 @@ export function DefaultLegalNoticeContent({ storeName = "Mi Tienda" }: DefaultCo
 		</div>
 	);
 }
+
+

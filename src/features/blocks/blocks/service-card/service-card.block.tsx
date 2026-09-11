@@ -27,3 +27,5 @@ export const serviceCardBlock: BlockDefinition<ServiceCardBlockProps> = {
 	},
 	defaultProps: serviceCardDefaultProps,
 };
+
+

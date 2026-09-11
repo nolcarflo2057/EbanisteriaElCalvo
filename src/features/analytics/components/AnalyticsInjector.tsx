@@ -81,3 +81,5 @@ fbq('track', 'PageView');
 export function AnalyticsNoscript({ tenantId }: Props) {
 	return <noscript data-analytics-tenant={tenantId} />;
 }
+
+

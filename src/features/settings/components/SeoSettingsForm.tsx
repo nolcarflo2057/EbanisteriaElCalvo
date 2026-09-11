@@ -186,3 +186,5 @@ export function SeoSettingsForm({ initialData }: Props) {
 		</Card>
 	);
 }
+
+

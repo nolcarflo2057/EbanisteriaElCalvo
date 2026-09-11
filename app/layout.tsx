@@ -196,3 +196,5 @@ export default async function ShopLayout({
 		</html>
 	));
 }
+
+

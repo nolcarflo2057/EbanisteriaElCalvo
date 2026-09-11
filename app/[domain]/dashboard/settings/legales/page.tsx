@@ -8,3 +8,4 @@ export default async function LegalesSettingsPage() {
 
 	return <LegalesSettingsForm initialData={legales} />;
 }
+

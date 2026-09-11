@@ -22,3 +22,5 @@ export const heroBlock: BlockDefinition<HeroBlockProps> = {
 	},
 	defaultProps: heroDefaultProps,
 };
+
+

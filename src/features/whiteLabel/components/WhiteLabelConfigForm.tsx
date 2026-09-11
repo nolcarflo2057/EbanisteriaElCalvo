@@ -149,3 +149,5 @@ export function WhiteLabelConfigForm({ initialData }: Props) {
 		</form>
 	);
 }
+
+

@@ -15,3 +15,4 @@ export default async function IntegrationsSettingsPage() {
 
 	return <IntegrationsSettingsForm initialData={integrations} trackingData={tracking} />;
 }
+

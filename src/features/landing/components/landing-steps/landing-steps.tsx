@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import type { LandingStepsProps } from "./landing-steps.types";
 import { useLandingSteps } from "./useLandingSteps";
 
@@ -37,3 +37,5 @@ export function LandingSteps({ title, subtitle, steps }: LandingStepsProps) {
 		</section>
 	);
 }
+
+

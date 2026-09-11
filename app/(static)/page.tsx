@@ -28,7 +28,7 @@ function LocationHoursStatic() {
 
 	return (
 		<section className="py-12 md:py-24 bg-surface" id="ubicacion">
-			<div className="max-w-[1200px] mx-auto px-4 md:px-10">
+			<div className="max-w-[1400px] mx-auto px-4 md:px-10">
 				{p.mapEmbedUrl ? (
 					<div className="bg-white rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-5 border border-outline-variant">
 						<div className="relative md:col-span-3 h-full min-h-[380px]">
@@ -47,7 +47,11 @@ function LocationHoursStatic() {
 								{p.icon}
 							</span>
 							<h2 className="font-headline-md text-headline-md mb-4 text-on-primary">{p.title}</h2>
-							<p className="font-body-md text-on-primary/80 mb-8">{p.description}</p>
+							<div className="font-body-md text-on-primary/80 mb-8 space-y-4">
+								{p.description?.split(/(?:\r?\n|\\n|<br\s*\/?>)+/i).map((paragraph, index) => (
+									paragraph.trim() ? <p key={index}>{paragraph.trim()}</p> : null
+								))}
+							</div>
 							{p.address && (
 								<div className="flex items-center gap-3 text-on-primary mb-4">
 									<span className="material-symbols-outlined text-secondary-container">map</span>
@@ -124,7 +128,7 @@ function ServicesGridStatic() {
 					backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E")`,
 				}}
 			/>
-			<div className="max-w-[1200px] mx-auto px-4 md:px-10 relative">
+			<div className="max-w-[1400px] mx-auto px-4 md:px-10 relative">
 				<div className="text-center mb-16">
 					<span className="text-secondary font-label-md uppercase tracking-widest block mb-2">
 						{p.subtitle}
@@ -168,10 +172,10 @@ function ArtisanShowcaseStatic() {
 
 	return (
 		<section className={cn("py-12 md:py-24 overflow-hidden", backgroundClass)} id="artesano">
-			<div className="max-w-[1200px] mx-auto px-4 md:px-10">
-				<div className={cn("grid md:grid-cols-2 gap-16 items-center", isImageLeft ? "" : "md:flex-row-reverse")}>
-					<div className="relative">
-						<div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+			<div className="max-w-[1400px] mx-auto px-4 md:px-10">
+				<div className={cn("grid md:grid-cols-2 gap-16 items-stretch", isImageLeft ? "" : "md:flex-row-reverse")}>
+					<div className="relative h-full min-h-[400px]">
+						<div className="h-full rounded-2xl overflow-hidden shadow-2xl relative z-10">
 							<Image
   alt={p.imageAlt}
   src={p.image}
@@ -184,12 +188,16 @@ function ArtisanShowcaseStatic() {
 						<div className="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl -z-10" />
 						<div className="absolute -top-8 -left-8 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl -z-10" />
 					</div>
-					<div>
+					<div className="flex flex-col justify-center">
 						{p.badge && (
 							<span className="text-secondary font-label-md uppercase tracking-widest block mb-4">{p.badge}</span>
 						)}
 						<h2 className="font-headline-md text-headline-md mb-6 text-primary">{p.title}</h2>
-						<p className="font-body-md text-on-surface-variant mb-8">{p.description}</p>
+						<div className="font-body-md text-on-surface-variant mb-8 space-y-4">
+							{p.description?.split(/(?:\r?\n|\\n|<br\s*\/?>)+/i).map((paragraph, index) => (
+								paragraph.trim() ? <p key={index}>{paragraph.trim()}</p> : null
+							))}
+						</div>
 						{p.badgeContent && (
 							<div className="flex items-center gap-6 p-6 bg-white rounded-xl shadow-sm border border-outline-variant">
 								<div className="text-secondary">
@@ -240,3 +248,5 @@ export default function StaticPage() {
 		</TenantThemeProvider>
 	);
 }
+
+

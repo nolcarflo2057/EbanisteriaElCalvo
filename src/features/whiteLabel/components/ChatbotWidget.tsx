@@ -170,3 +170,5 @@ export function ChatbotWidget({ config }: { config: ConfigData }) {
     </>
   );
 }
+
+

@@ -99,3 +99,4 @@ export default async function DynamicLegalPage({ params }: PageProps) {
 		</div>
 	);
 }
+

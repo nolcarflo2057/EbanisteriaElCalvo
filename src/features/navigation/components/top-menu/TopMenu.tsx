@@ -105,3 +105,5 @@ export function TopMenu({ onOpenSidebar, categories }: Props) {
 		</header>
 	);
 }
+
+

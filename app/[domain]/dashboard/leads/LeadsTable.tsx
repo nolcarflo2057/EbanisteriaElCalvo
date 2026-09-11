@@ -336,3 +336,4 @@ export function LeadsTable({ leads, statusLabels }: Props) {
 		</div>
 	);
 }
+

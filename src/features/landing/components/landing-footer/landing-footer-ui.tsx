@@ -27,7 +27,7 @@ export function LandingFooterUI({ brand, tagline, linkGroups, copyright }: Landi
 
 	return (
 		<footer className="bg-primary dark:bg-neutral-900 text-primary-foreground border-t border-primary/10">
-			<div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 flex max-md:flex-col md:flex-row justify-between items-center gap-8">
+			<div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 flex max-md:flex-col md:flex-row justify-between items-center gap-8">
 				{/* Left Side: Brand and Copyright */}
 				<div className="flex flex-col items-center md:items-start gap-2">
 					<span className="font-serif text-2xl font-bold tracking-tight text-white dark:text-neutral-100">
@@ -73,3 +73,5 @@ export function LandingFooterUI({ brand, tagline, linkGroups, copyright }: Landi
 		</footer>
 	);
 }
+
+

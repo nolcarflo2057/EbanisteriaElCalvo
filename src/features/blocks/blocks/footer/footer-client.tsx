@@ -133,7 +133,7 @@ export function FooterClient({ props }: Props) {
 	return (
 		<>
 			<footer className="bg-primary">
-				<div className="max-w-[1200px] mx-auto px-margin-desktop py-12 flex max-md:flex-col md:flex-row justify-between items-center gap-gutter">
+				<div className="max-w-[1400px] mx-auto px-margin-desktop py-12 flex max-md:flex-col md:flex-row justify-between items-center gap-gutter">
 					{/* Brand + Copyright */}
 					<div className="flex flex-col items-center md:items-start gap-4">
 						{props.logo && (
@@ -149,7 +149,7 @@ export function FooterClient({ props }: Props) {
 							{props.brand}
 						</span>
 						{props.tagline && (
-							<p className="font-label-sm text-label-sm text-white/70 -mt-2 text-center md:text-left w-full">
+							<p className="font-label-sm text-label-sm text-white/70 -mt-2 text-center md:text-left w-full whitespace-pre-line">
 								{props.tagline}
 							</p>
 						)}
@@ -207,6 +207,10 @@ export function FooterClient({ props }: Props) {
 					</div>
 				</div>
 			</footer>
+
+			<div className="bg-primary py-4 text-center">
+				<p className="mt-2 text-xs text-white">Desarrollado por{" "}<a href="https://jhonatanc-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{color:"#feb300"}}>JhonatanCardona.dev</a></p>
+			</div>
 
 			{/* ── Share Modal: Bottom sheet on mobile, centered on desktop ── */}
 			{shareOpen && (
@@ -284,3 +288,5 @@ export function FooterClient({ props }: Props) {
 		</>
 	);
 }
+
+

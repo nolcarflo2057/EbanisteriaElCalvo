@@ -26,3 +26,4 @@ const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
 Slider.displayName = SliderPrimitive.Root.displayName;
 
 export { Slider };
+

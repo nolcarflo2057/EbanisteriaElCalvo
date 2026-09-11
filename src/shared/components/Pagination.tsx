@@ -94,3 +94,5 @@ export const Pagination = ({ totalPages }: Props) => {
 		</div>
 	);
 };
+
+

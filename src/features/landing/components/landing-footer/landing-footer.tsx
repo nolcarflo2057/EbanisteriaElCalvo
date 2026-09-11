@@ -43,3 +43,5 @@ export async function LandingFooter({ brand, tagline, linkGroups, copyright }: L
 		/>
 	);
 }
+
+

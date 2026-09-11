@@ -31,3 +31,5 @@ export const PageNotFound = () => {
 		</div>
 	);
 };
+
+

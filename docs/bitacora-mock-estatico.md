@@ -116,3 +116,24 @@ La validación Zod ya aseguraba que era JSON válido, ahora también queda "limp
 - **Limpieza y Componentes de Ruta:** `loading.tsx`, `error.tsx` añadidos, utilidades deduplicadas y comentarios abusivos/logs limpiados.
 
 **Veredicto:** El código base está al 100% libre de bloqueadores, optimizado y listo para ser desplegado.
+
+---
+
+## 🛑 Incidente Reportado y Solucionado: Portada Estática Inlined
+
+**Fecha:** 2026-09-10
+
+**Problema (Síntoma):**
+Los cambios de diseño o renderizado aplicados a los componentes de bloque reutilizables (específicamente `artisan-showcase.block.tsx`) no se reflejaban en absoluto en la landing page pública (`/`), a pesar de reiniciar el servidor y limpiar cachés. Un ejemplo puntual fue el renderizado de saltos de línea y párrafos para los textos descriptivos.
+
+**Causa Raíz:**
+La ruta pública principal (`app/(static)/page.tsx`) **no utiliza** los componentes modulares ubicados en `src/features/blocks/blocks/`. Para optimizar la carga estática, esta ruta tiene **versiones estáticas inlined** (hardcodeadas) de esos componentes (ej: `function ArtisanShowcaseStatic() { ... }`). 
+Esto significa que hay duplicidad de código por diseño entre los bloques dinámicos y la landing page estática.
+
+**Solución Implementada:**
+Para arreglar problemas visuales o de renderizado en la página de inicio, se debe modificar el componente inlined directamente en `app/(static)/page.tsx`. En este caso, se actualizó la lógica de división de párrafos (`description.split`) en ambos lugares para mantener la coherencia.
+
+**Prevención Futura:**
+Cualquier mejora en la UI de los "Bloques" debe ser aplicada **dos veces** si dicha mejora se desea ver en el home público:
+1. En el bloque real (ej: `src/features/blocks/blocks/artisan-showcase/artisan-showcase.block.tsx`) para cuando se usa vía CMS o páginas dinámicas.
+2. En la versión inlined (ej: `app/(static)/page.tsx`) para la portada estática actual.

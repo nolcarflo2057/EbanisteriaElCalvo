@@ -130,3 +130,5 @@ export function StoreNavbar({ onOpenMobileSidebar, navbarStyle }: NavbarProps) {
 		</header>
 	);
 }
+
+

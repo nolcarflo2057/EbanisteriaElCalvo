@@ -123,3 +123,4 @@ export function NavbarMinimalComponent({ props }: { props: NavbarMinimalProps })
 		</nav>
 	);
 }
+

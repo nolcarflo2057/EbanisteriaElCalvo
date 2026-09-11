@@ -19,7 +19,7 @@ export const splitSectionBlock: BlockDefinition<SplitSectionBlockProps> = {
 
 		return (
 			<section className={cn("py-12 md:py-24 overflow-hidden", backgroundClass)} id="artesano">
-				<div className="max-w-[1200px] mx-auto px-4 md:px-10">
+				<div className="max-w-[1400px] mx-auto px-4 md:px-10">
 					<div className={cn("grid md:grid-cols-2 gap-16 items-center", isImageLeft ? "" : "md:flex-row-reverse")}>
 						{/* Image Column */}
 						<div className="relative">
@@ -75,3 +75,5 @@ export const splitSectionBlock: BlockDefinition<SplitSectionBlockProps> = {
 	},
 	defaultProps: splitSectionDefaultProps,
 };
+
+

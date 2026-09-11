@@ -27,3 +27,5 @@ export const pricingBlock: BlockDefinition<PricingBlockProps> = {
 	},
 	defaultProps: pricingDefaultProps,
 };
+
+

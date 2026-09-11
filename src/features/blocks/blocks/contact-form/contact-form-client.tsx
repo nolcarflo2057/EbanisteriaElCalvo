@@ -96,24 +96,32 @@ export function ContactFormClient({ props }: { props: ContactFormBlockProps }) {
 
 	return (
 		<section className="py-12 md:py-24 bg-surface-bright relative overflow-hidden" id="contacto">
-			<div className="max-w-[1200px] mx-auto px-4 md:px-margin-desktop">
+			<div className="max-w-[1400px] mx-auto px-4 md:px-margin-desktop">
 				<div className="rounded-2xl shadow-xl overflow-hidden flex max-md:flex-col md:flex-row border border-outline-variant/60 interactive-card">
 					{/* Left Panel - Info */}
 					<div className={cn("md:w-1/2 p-6 md:p-12 flex flex-col justify-center", leftBgClass)}>
 						<h2 className="font-headline-md text-headline-md mb-6 slide-up-fade">
 							{props.title}
 						</h2>
-						<p className="font-body-md mb-8 opacity-80 slide-up-fade animation-delay-100">
-							{props.description}
-						</p>
-						<ul className="space-y-4 slide-up-fade animation-delay-200">
-							{props.benefits?.map((benefit, i) => (
-								<li key={i} className="flex items-center gap-4">
-									<Check className="size-5 text-secondary-container shrink-0" />
-									<span>{benefit.text}</span>
-								</li>
+						<div className="font-body-md mb-8 opacity-80 slide-up-fade animation-delay-100 space-y-4">
+							{props.description?.split(/(?:\r?\n|\\n|<br\s*\/?>)+/i).map((paragraph, index) => (
+								paragraph.trim() ? <p key={index}>{paragraph.trim()}</p> : null
 							))}
-						</ul>
+						</div>
+						
+						{props.benefits && props.benefits.length > 0 && (
+							<>
+								<h3 className="font-headline-sm text-primary mb-4 slide-up-fade animation-delay-200 bg-white px-4 py-2 rounded-lg inline-block">Beneficios</h3>
+								<ul className="space-y-4 slide-up-fade animation-delay-200">
+									{props.benefits.map((benefit, i) => (
+										<li key={i} className="flex items-center gap-4">
+											<Check className="size-5 text-secondary-container shrink-0" />
+											<span>{benefit.text}</span>
+										</li>
+									))}
+								</ul>
+							</>
+						)}
 					</div>
 
 					{/* Right Panel - Form */}
@@ -147,9 +155,11 @@ export function ContactFormClient({ props }: { props: ContactFormBlockProps }) {
 					<Award className="size-8 text-primary" />
 				</div>
 				<p className="text-label-sm font-label-sm text-primary/40 mt-2 uppercase tracking-[0.2em]">
-					Sello de Calidad Artesanal
+					RESTAURAMOS · DISEÑAMOS · FABRICAMOS
 				</p>
 			</div>
 		</section>
 	);
 }
+
+
