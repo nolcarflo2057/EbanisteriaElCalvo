@@ -15,7 +15,7 @@ export function LandingHero({ title, subtitle, ctaLabel, ctaHref, bgImage, bgAlt
 	const resolvedButtonStyle = buttonStyle ?? themeConfig.buttonStyle;
 	const btnClasses = resolveButtonClasses({ buttonStyle: resolvedButtonStyle } as any);
 	return (
-		<section className="relative h-[70vh] sm:h-[70vh] flex items-center overflow-hidden">
+		<section className="relative w-full h-[70vh] min-h-[500px] max-h-[800px] flex items-center overflow-hidden">
 			<div className="absolute inset-0 z-0 ">
 				<Image
 					src={bgImage}
