@@ -8,12 +8,34 @@ export const faqBlock: BlockDefinition<FaqBlockProps> = {
 	Component: ({ props }) => {
 		 
 		const {} = useFaq();
+		const items = props.items ?? [];
+		const jsonLd = {
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": items.map((i) => ({
+				"@type": "Question",
+				"name": i.question,
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": i.answer
+				}
+			}))
+		};
+
 		return (
-			<LandingFaq
-				title={props.title}
-				subtitle={props.subtitle}
-				items={(props.items ?? []).map((i) => ({ question: i.question, answer: i.answer }))}
-			/>
+			<>
+				{items.length > 0 && (
+					<script
+						type="application/ld+json"
+						dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+					/>
+				)}
+				<LandingFaq
+					title={props.title}
+					subtitle={props.subtitle}
+					items={items.map((i) => ({ question: i.question, answer: i.answer }))}
+				/>
+			</>
 		);
 	},
 	defaultProps: faqDefaultProps,

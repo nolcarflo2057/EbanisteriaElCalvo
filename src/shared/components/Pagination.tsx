@@ -39,7 +39,7 @@ export const Pagination = ({ totalPages }: Props) => {
 
 	return (
 		<div className="flex text-center justify-center mt-10 mb-8">
-			<nav aria-label="Page navigation example">
+			<nav aria-label="Navegación de páginas de productos">
 				<ul className="flex list-style-none">
 					<li className="page-item ">
 						<Link
@@ -53,6 +53,7 @@ export const Pagination = ({ totalPages }: Props) => {
 
 							}
 							href={createPageUrl(currentPage - 1) as any}
+							aria-label="Ir a la página anterior"
 						>
 							<ChevronLeftIcon className="h-5 w-5" />
 						</Link>
@@ -68,6 +69,7 @@ export const Pagination = ({ totalPages }: Props) => {
 									},
 								)}
 								href={createPageUrl(page) as any}
+								aria-label={`Ir a la página ${page}`}
 							>
 								{page}
 							</Link>
@@ -85,6 +87,7 @@ export const Pagination = ({ totalPages }: Props) => {
 
 							}
 							href={createPageUrl(currentPage + 1) as any}
+							aria-label="Ir a la página siguiente"
 						>
 							<ChevronRightIcon className="h-5 w-5" />
 						</Link>

@@ -22,7 +22,7 @@ export function NavigationClient({ props }: { props: NavigationBlockProps }) {
 			<div className="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20 w-full">
 				{/* Logo */}
 				<a className="font-headline-md text-headline-md text-primary tracking-tight" href="#">
-					<h1>{brandName}</h1>
+					<span className="block font-bold">{brandName}</span>
 				</a>
 
 				{/* Desktop Links */}

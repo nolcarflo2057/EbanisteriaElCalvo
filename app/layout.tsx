@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import "@uploadthing/react/styles.css";
-import { inter, outfit, titleFonts } from "@/config/fonts";
+import { inter, outfit, titleFonts, domine, workSans } from "@/config/fonts";
 
 import { ThemeProvider } from "@/features/settings/components/ThemeProvider";
 import { tenantStorage } from "@/core/tenant/tenant-context";
@@ -158,18 +158,11 @@ export default async function ShopLayout({
 	return tenantStorage.run({ tenantId }, () => (
 		<html
 			lang="es"
-			className={`${outfit.variable} ${inter.variable} ${titleFonts.variable} h-full bg-background antialiased`}
+			className={`${outfit.variable} ${inter.variable} ${titleFonts.variable} ${domine.variable} ${workSans.variable} h-full bg-background antialiased`}
 			suppressHydrationWarning
 		>
 			<head suppressHydrationWarning>
 				<ThemeProvider />
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-				{/* eslint-disable-next-line @next/next/no-page-custom-font */}
-				<link
-					href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap"
-					rel="stylesheet"
-				/>
 				{/* eslint-disable-next-line @next/next/no-page-custom-font */}
 				<link
 					href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -190,6 +183,9 @@ export default async function ShopLayout({
 				className="min-h-full flex flex-col font-sans"
 				suppressHydrationWarning
 			>
+				<a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground">
+					Saltar al contenido principal
+				</a>
 				{children}
 				<Toaster position="top-right" toastOptions={{ duration: 4000 }} />
 			</body>

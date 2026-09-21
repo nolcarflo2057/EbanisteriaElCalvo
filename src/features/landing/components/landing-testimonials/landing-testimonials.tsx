@@ -6,7 +6,7 @@ function Stars({ rating }: { rating: number }) {
 	return (
 		<div className="flex gap-0.5" aria-label={`${rating} de 5 estrellas`}>
 			{Array.from({ length: 5 }).map((_, i) => (
-				<span key={i} className={i < rating ? "text-amber-400" : "text-muted"}>
+				<span key={i} aria-hidden="true" className={i < rating ? "text-amber-400" : "text-muted"}>
 					★
 				</span>
 			))}
