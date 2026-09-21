@@ -24,7 +24,7 @@ export function LandingHero({ title, subtitle, ctaLabel, ctaHref, bgImage, bgAlt
 					sizes="100vw"
 					priority
 					fetchPriority="high"
-					className="object-cover object-[60%_center]"
+					className="object-cover object-[60%_center] animate-slow-pan"
 					unoptimized={shouldUnoptimize(bgImage)}
 				/>
 				<div className="absolute inset-0 bg-primary/40 sm:bg-primary/20" />
@@ -32,8 +32,8 @@ export function LandingHero({ title, subtitle, ctaLabel, ctaHref, bgImage, bgAlt
 			<div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 relative z-10 w-full">
 				<div className="max-w-xl text-on-primary">
 					{badge && (
-						<span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase bg-on-primary/10 text-on-primary border border-on-primary/25 mb-4 slide-up-fade">
-							<span className="size-1.5 rounded-full bg-on-primary animate-pulse" />
+						<span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase glass-panel text-white mb-4 slide-up-fade">
+							<span className="size-1.5 rounded-full bg-white animate-pulse" />
 							{badge}
 						</span>
 					)}

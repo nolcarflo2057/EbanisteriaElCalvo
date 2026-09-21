@@ -46,7 +46,7 @@ export function LandingGallery(props: LandingGalleryProps) {
 								unoptimized={shouldUnoptimize(img.url)}
 							/>
 							{img.label && (
-								<div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+								<div className="absolute inset-0 bg-primary/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
 									<p className="text-on-primary font-headline-sm">
 										{img.label}
 									</p>

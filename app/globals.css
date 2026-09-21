@@ -318,6 +318,23 @@
 	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
 }
 
+@keyframes slowPan {
+	0% { transform: scale(1); }
+	100% { transform: scale(1.08); }
+}
+
+.animate-slow-pan {
+	animation: slowPan 25s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.glass-panel {
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
 /* ADMIN / DASHBOARD — Tipografía legible (área administrativa).
  * Los componentes shadcn usan text-sm (14px) y text-xs (12px): muy pequeños
  * para gestión. Se escala SOLO dentro de .dashboard-ui (main del dashboard),
