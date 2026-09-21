@@ -235,7 +235,7 @@ export function FooterClient({ props }: Props) {
 						Pereira - Risaralda
 					</p>
 				</div>
-				<p className="text-xs text-white/70 mt-2">Desarrollado por{" "}<a href="https://jhonatanc-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{color:"#feb300"}}>JhonatanCardona.dev</a></p>
+				<p className="text-xs text-white/70 mt-2">Desarrollado por{" "}<a href="https://jhonatanc-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-white hover:text-secondary-container hover:underline">JhonatanCardona.dev</a></p>
 			</div>
 
 			{/* ── Share Modal: Bottom sheet on mobile, centered on desktop ── */}

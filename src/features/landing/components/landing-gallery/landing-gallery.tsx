@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { LandingGalleryProps } from "./landing-gallery.types";
 import { useLandingGallery } from "./useLandingGallery";
+import { shouldUnoptimize } from "@/shared/utils/image";
 
 export function LandingGallery(props: LandingGalleryProps) {
 	const { title, subtitle, description } = props;
@@ -42,7 +43,7 @@ export function LandingGallery(props: LandingGalleryProps) {
 								fill
 								sizes="(max-width: 768px) 100vw, 50vw"
 								className="object-cover transition-transform duration-500 group-hover:scale-110"
-								unoptimized={img.url.startsWith("http")}
+								unoptimized={shouldUnoptimize(img.url)}
 							/>
 							{img.label && (
 								<div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">

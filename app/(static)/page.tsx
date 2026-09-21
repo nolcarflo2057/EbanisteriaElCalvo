@@ -11,6 +11,7 @@ import { ContactFormClient } from "@/features/blocks/blocks/contact-form/contact
 import { ScrollReveal } from "@/shared/components/ui/ScrollReveal";
 
 import { cn } from "@/shared/utils/cn";
+import { shouldUnoptimize } from "@/shared/utils/image";
 import {
 	nav, hero, services, artisan, gallery, location, contact, footer,
 } from "./mock-data";
@@ -181,9 +182,9 @@ function ArtisanShowcaseStatic() {
 								alt={p.imageAlt}
 								src={p.image}
 								fill
-								sizes="100vw"
+								sizes="(max-width: 768px) 100vw, 50vw"
 								className="object-cover"
-								unoptimized={p.image.startsWith("http")}
+								unoptimized={shouldUnoptimize(p.image)}
 							/>
 						</div>
 						<div className="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl -z-10" />

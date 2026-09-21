@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { shouldUnoptimize } from "@/shared/utils/image";
 import Link from "next/link";
 import type { LandingHeroProps } from "./landing-hero.types";
 import { useLandingHero } from "./useLandingHero";
@@ -24,7 +25,7 @@ export function LandingHero({ title, subtitle, ctaLabel, ctaHref, bgImage, bgAlt
 					priority
 					fetchPriority="high"
 					className="object-cover object-[60%_center]"
-					unoptimized={bgImage?.startsWith("http")}
+					unoptimized={shouldUnoptimize(bgImage)}
 				/>
 				<div className="absolute inset-0 bg-primary/40 sm:bg-primary/20" />
 			</div>
