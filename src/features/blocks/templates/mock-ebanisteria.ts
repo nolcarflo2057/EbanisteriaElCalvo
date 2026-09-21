@@ -26,8 +26,7 @@ export const heroProps: HeroBlockProps = {
 		"Restauramos y renovamos tus muebles para que vuelvan a hacer parte de tus espacios. Conservamos lo que los hace especiales y les damos un estilo renovado y funcional.",
 	ctaLabel: "Contáctanos ahora",
 	ctaHref: "#contacto",
-	bgImage:
-		"https://lh3.googleusercontent.com/aida-public/AB6AXuDsf2gE4yozlKT3nJY-WKWevRPgwid8Twb_v15Hb8p0_47EdMm6ZsFoaYse4r730ChsgzFpkRKl-YEO2sbr16j9mHBv8TBo7NkxoTGEdV5SIijNTAbAQtpWsleml352OW4FP7pDVJ8BUufQr1jLFPxIiFaG4wfezZR6_RkxvbSi_NxgVGpGBQmAbSzCfzdBz39Kddc81wJgxb-y4ppQDPmExZxOWIO9n8fzYZub3wB7p8tvNlpPKAxnhw",
+	bgImage: "/images/hero/hero.webp",
 	bgAlt: "Taller de restauración con muebles antiguos",
 	badge: "Restauración de Muebles & Ebanistería",
 };
@@ -70,8 +69,7 @@ export const servicesGridProps: ServicesGridBlockProps = {
 
 export const artisanShowcaseProps: ArtisanShowcaseBlockProps = {
 	layout: "image-left",
-	image:
-		"https://lh3.googleusercontent.com/aida-public/AB6AXuCWuBIsFR8zv9780y07s7r3cpOiLDqijZyyCWfJdO9VEpbei7ulqnJ_mpc2ceZpATf5U_g3HZg5GXG8sNFECLlhAncUO8GOqSInW6vaSDmeA_BCSfSF7vJxseHe_KFxUhrXt7SzZ1rktrhRiSsdksS27uR_1MxUOuorPl634ip5TBFAokrJJzcEjopxnxStbnMgFqY_wDHIrrpKtF0nnY4MqboXOod2lv0Bq9mPNEXgC3Ms97GYm5Nd2A",
+	image: "/images/hero/artisan.webp",
 	imageAlt: "Maestro restaurador trabajando meticulosamente la madera",
 	badge: "UNA HISTORIA HECHA EN PEREIRA",
 	title: "Conoce la historia detrás de Ebanistería El Calvo",
@@ -90,26 +88,26 @@ export const galleryProps: GalleryBlockProps = {
 	subtitle: "Galería",
 	description:
 		"Cada proyecto tiene su propia historia. Restauramos muebles que merecen seguir siendo parte de tu hogar, pero también diseñamos y construimos nuevas soluciones en madera para transformar tus espacios.\n\nRestauración, renovación y fabricación a medida: desde un mueble recuperado hasta una cocina, un clóset o una puerta hecha para tu espacio.",
-	images: [
+images: [
 		{
-			url: "https://lh3.googleusercontent.com/aida-public/AB6AXuCIWSbNpdYuImq7LIX9EGms5YmXdaAaMi7K1w0FAZKhfd8v6YGJKlVU_GzcKcuS262kfz5ien3wZdkZaywFPfsWpOtcn4LWvIOqjJaLXiysGA5CSkwBWFR_C_qorCheNCLJWArK822-eFV3khp2gaqfx11VRmYKhJbsdakffr2EvfqV4Nq6JumDeeUejLj0sPDCLw1L74ZG7SVZiVlzJGIMuj0zt69ZAEiG4QQRrBXNfbJzjVxzqlYZ0Q",
-			label: "Silla Luis XV Restaurada",
-			alt: "Silla antigua restaurada",
+			url: "/images/gallery/kitchen.webp",
+			label: "Cocina Integral Moderna",
+			alt: "Cocina integral moderna con acabados premium",
 		},
 		{
-			url: "https://lh3.googleusercontent.com/aida-public/AB6AXuAkYvxFes9gGFFf67bAoha-bm9f0g5k5sLB4A0R9ZRgUHeILZnYpNJnOr_34GFYyrBhLWlFSyNubmJR7vzKaX-3wPtRbJrqDxZhq5mqEP50ab_d5Qo5MG0kJZSKJB32eDNB_52N--u3JQo9vOH-LOSfyFXEzu32YkT88dPkqPql1QMtjyL-ttRW2beYNoWlBvqxb7Pmru8wOqDV7Fs-l0c4LWSWb7cU_P7LWlNQ7SvVWsiEQd_3I9gpfA",
-			label: "Puerta de Roble Recuperada",
-			alt: "Puerta de madera antigua recuperada",
+			url: "/images/gallery/door.webp",
+			label: "Puerta de Diseño",
+			alt: "Puerta de diseño moderno para oficina",
 		},
 		{
-			url: "https://lh3.googleusercontent.com/aida-public/AB6AXuAwqJZUz_Kps1FldNayNaMjB5TTGdolJLE247qr_mtpoh8uR306AhkQlZtjYXr9qorrFerj9hn_ascN95TTkOKN1pYTs5yV_PLBNdlMXkaCwb03LN5CbPzerlPbybMAmy7tg2q3LOUaCoCGa107DTeZI29XZbCDfaFNCS2dEe4fkO0g5nK9ER5yvZ7PBDqHZwE42KogqQBZkzcqApmt5scbpj2RGJZCptCvpx6t9KUx6UzXFu1oVg8r3w",
-			label: "Mesa de Comedor Refinada",
-			alt: "Mesa de comedor pulida y barnizada",
+			url: "/images/gallery/table.webp",
+			label: "Mesa de Comedor a Medida",
+			alt: "Mesa de comedor fabricada a medida con acabados de alta calidad",
 		},
 		{
-			url: "https://lh3.googleusercontent.com/aida-public/AB6AXuAy35_zxeRLIeMKzx1Rr9Xcyqqy8CmhGId7eAOLSTjyC1irbbo5kkTrXAT5oLFgpjdKELWTT9GyBjZOv_xYGX2jMxF9zPQbU2fQC-ds6U1z9JI87kappw9symlLr5hl97GqvgW5FWksla6SmXZzd6WB4gzlnthLZ2gw4P_Qx4AHwk3ZYABPahWR8cyodpzYkS-Ks5MoE1IoAMeJcVW97SW7NjK1fjV2merSPEZtkOQYg4wFBWrrGCAERg",
-			label: "Talla Artesanal Limpiada",
-			alt: "Talla de madera restaurada cuidadosamente",
+			url: "/images/gallery/closet.webp",
+			label: "Closet Personalizado",
+			alt: "Closet personalizado con diseño moderno y funcional",
 		},
 	],
 };
