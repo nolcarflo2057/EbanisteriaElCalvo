@@ -2,6 +2,8 @@
 
 import React from "react";
 import toast from "react-hot-toast";
+import Image from "next/image";
+import { shouldUnoptimize } from "@/shared/utils/image";
 import type { FooterBlockProps } from "./footer.schema";
 
 interface Props {
@@ -138,11 +140,16 @@ export function FooterClient({ props }: Props) {
 					<div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:col-span-1">
 						{props.logo && (
 							<div className="flex-shrink-0">
-								<img 
-									src={props.logo} 
-									alt={`Logo ${props.brand || "Marca"}`} 
-									className="w-20 h-20 object-cover rounded-2xl shadow-md border-2 border-white/10" 
-								/>
+								<div className="relative w-20 h-20 rounded-2xl shadow-md border-2 border-white/10 overflow-hidden">
+									<Image 
+										src={props.logo} 
+										alt={`Logo ${props.brand || "Marca"}`}
+										fill
+										sizes="80px"
+										className="object-cover" 
+										unoptimized={shouldUnoptimize(props.logo)}
+									/>
+								</div>
 							</div>
 						)}
 						<div className="flex flex-col items-center md:items-start text-center md:text-left gap-1 mt-1">

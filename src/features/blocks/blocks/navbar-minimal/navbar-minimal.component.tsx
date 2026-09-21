@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { shouldUnoptimize } from "@/shared/utils/image";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useLeadModal } from "@/features/leads/components/LeadModalProvider";
@@ -46,7 +47,7 @@ export function NavbarMinimalComponent({ props }: { props: NavbarMinimalProps })
 						width={40}
 						height={40}
 						className="h-6 md:h-10 w-auto object-contain"
-						unoptimized={String(props.logoImage).startsWith("http")}
+						unoptimized={shouldUnoptimize(props.logoImage)}
 					/>
 					<span className="font-display-lg text-[20px] md:text-headline-lg tracking-tighter text-primary uppercase">
 						{props.logoText}

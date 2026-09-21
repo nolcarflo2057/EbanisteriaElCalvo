@@ -166,8 +166,22 @@ export default async function ShopLayout({
 				{/* eslint-disable-next-line @next/next/no-page-custom-font */}
 				<link
 					href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-					rel="stylesheet"
+					rel="preload"
+					as="style"
 				/>
+				<link
+					href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+					rel="stylesheet"
+					media="print"
+					// @ts-expect-error Async font loading hack
+					onLoad="this.media='all'"
+				/>
+				<noscript>
+					<link
+						href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+						rel="stylesheet"
+					/>
+				</noscript>
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
