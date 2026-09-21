@@ -22,6 +22,7 @@ export function LandingHero({ title, subtitle, ctaLabel, ctaHref, bgImage, bgAlt
 					fill
 					sizes="100vw"
 					priority
+					fetchPriority="high"
 					className="object-cover object-[60%_center]"
 					unoptimized={bgImage?.startsWith("http")}
 				/>

@@ -224,7 +224,7 @@ export default function StaticPage() {
 		<TenantThemeProvider config={themeConfig}>
 			<StoreConfigProvider initialConfig={{ name: "Ebanistería El Calvo" }}>
 				<NavigationClient props={nav} />
-				<main className="flex-1 w-full">
+				<main id="main-content" className="flex-1 w-full">
 					<LandingHero
 						title={hero.title}
 						subtitle={hero.subtitle}

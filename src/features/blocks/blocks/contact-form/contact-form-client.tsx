@@ -32,8 +32,9 @@ export function ContactFormClient({ props }: { props: ContactFormBlockProps }) {
 			}
 			return (
 				<div className="space-y-2">
-					<label className="font-label-md text-primary">{field.label}</label>
+					<label htmlFor={field.key} className="font-label-md text-primary">{field.label}</label>
 					<select
+						id={field.key}
 						name={field.key}
 						value={value}
 						onChange={e => handleChange(field.key, e.target.value)}
@@ -51,8 +52,9 @@ export function ContactFormClient({ props }: { props: ContactFormBlockProps }) {
 		if (field.type === "textarea") {
 			return (
 				<div className="space-y-2">
-					<label className="font-label-md text-primary">{field.label}</label>
+					<label htmlFor={field.key} className="font-label-md text-primary">{field.label}</label>
 					<textarea
+						id={field.key}
 						name={field.key}
 						value={value}
 						onChange={e => handleChange(field.key, e.target.value)}
@@ -67,8 +69,9 @@ export function ContactFormClient({ props }: { props: ContactFormBlockProps }) {
 
 		return (
 			<div className="space-y-2">
-				<label className="font-label-md text-primary">{field.label}</label>
+				<label htmlFor={field.key} className="font-label-md text-primary">{field.label}</label>
 				<input
+					id={field.key}
 					type={field.type}
 					name={field.key}
 					value={value}
