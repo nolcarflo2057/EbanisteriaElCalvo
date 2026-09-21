@@ -24,7 +24,7 @@ export function LandingHero({ title, subtitle, ctaLabel, ctaHref, bgImage, bgAlt
 					sizes="100vw"
 					priority
 					fetchPriority="high"
-					className="object-cover object-[60%_center] animate-slow-pan"
+					className="object-cover object-center sm:object-[60%_center] animate-slow-pan"
 					unoptimized={shouldUnoptimize(bgImage)}
 				/>
 				<div className="absolute inset-0 bg-primary/40 sm:bg-primary/20" />
