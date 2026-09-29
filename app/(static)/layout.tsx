@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { BRAND } from "@/features/blocks/templates/mock-ebanisteria";
 
 import { siteConfig } from "@/config/site";
+import { StaticGA4Script } from "./StaticGA4Script";
+import { CookieConsentBanner } from "@/features/settings/components/CookieConsentBanner";
 
 export const metadata: Metadata = {
 	title: {
@@ -122,7 +124,9 @@ export default function StaticLayout({
 					}),
 				}}
 			/>
+			<StaticGA4Script />
 			{children}
+			<CookieConsentBanner />
 		</>
 	);
 }
