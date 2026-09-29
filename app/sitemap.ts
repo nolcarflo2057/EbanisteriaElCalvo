@@ -6,30 +6,54 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const baseUrl =
 		process.env.NEXT_PUBLIC_APP_URL ||
 		process.env.BETTER_AUTH_URL ||
-		"https://carvin-ecommerce.vercel.app";
+		"https://ebanisteria-el-calvo.com";
+
+	const now = new Date();
 
 	const entries: MetadataRoute.Sitemap = [
+		// — Página principal (landing estática)
 		{
 			url: baseUrl,
-			lastModified: new Date(),
+			lastModified: now,
 			changeFrequency: "daily",
 			priority: 1.0,
 		},
+		// — Secciones de servicio (deep links al contenido de la landing)
 		{
-			url: `${baseUrl}/products`,
-			lastModified: new Date(),
-			changeFrequency: "daily",
+			url: `${baseUrl}/#servicios`,
+			lastModified: now,
+			changeFrequency: "weekly",
 			priority: 0.9,
 		},
 		{
+			url: `${baseUrl}/#galeria`,
+			lastModified: now,
+			changeFrequency: "weekly",
+			priority: 0.8,
+		},
+		{
+			url: `${baseUrl}/#contacto`,
+			lastModified: now,
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
+		// — Catálogo de productos
+		{
+			url: `${baseUrl}/products`,
+			lastModified: now,
+			changeFrequency: "daily",
+			priority: 0.9,
+		},
+		// — Páginas legales
+		{
 			url: `${baseUrl}/p/privacidad`,
-			lastModified: new Date(),
+			lastModified: now,
 			changeFrequency: "monthly",
 			priority: 0.3,
 		},
 		{
 			url: `${baseUrl}/p/terminos`,
-			lastModified: new Date(),
+			lastModified: now,
 			changeFrequency: "monthly",
 			priority: 0.3,
 		},
@@ -43,7 +67,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			if (!row.slug) continue;
 			entries.push({
 				url: `${baseUrl}/${row.slug}`,
-				lastModified: new Date(),
+				lastModified: now,
 				changeFrequency: "daily",
 				priority: 0.9,
 			});
@@ -54,3 +78,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 	return entries;
 }
+

@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, LoginInput } from "../schema/auth.schema";
 import { signIn } from "@/lib/auth/auth-client";
 import { useState } from "react";
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import { InformationCircleIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 export function LoginForm({ redirectTo = "/", showRegisterLink = true }: { redirectTo?: string; showRegisterLink?: boolean }) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
+	const [showPassword, setShowPassword] = useState(false);
 	const router = useRouter();
 	
 	const {
@@ -82,16 +83,31 @@ export function LoginForm({ redirectTo = "/", showRegisterLink = true }: { redir
 				<label htmlFor="password" className="text-sm font-medium text-foreground">
 					Contraseña
 				</label>
-				<input
-					id="password"
-					type="password"
-					placeholder="••••••••"
-					className={clsx(
-						"w-full bg-surface-container-low border rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all text-foreground",
-						errors.password ? "border-destructive" : "border-border"
-					)}
-					{...register("password")}
-				/>
+				<div className="relative">
+					<input
+						id="password"
+						type={showPassword ? "text" : "password"}
+						placeholder="••••••••"
+						className={clsx(
+							"w-full bg-surface-container-low border rounded-xl p-3 pr-11 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all text-foreground",
+							errors.password ? "border-destructive" : "border-border"
+						)}
+						{...register("password")}
+					/>
+					<button
+						type="button"
+						onClick={() => setShowPassword((prev) => !prev)}
+						className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+						aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+						tabIndex={-1}
+					>
+						{showPassword ? (
+							<EyeSlashIcon className="h-5 w-5" />
+						) : (
+							<EyeIcon className="h-5 w-5" />
+						)}
+					</button>
+				</div>
 				{errors.password && (
 					<p className="text-xs text-destructive mt-1 font-medium">{errors.password.message}</p>
 				)}

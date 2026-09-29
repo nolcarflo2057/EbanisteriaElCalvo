@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, RegisterInput } from "../schema/auth.schema";
 import { signUp } from "@/lib/auth/auth-client";
 import { useState } from "react";
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import { InformationCircleIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 export function RegisterForm() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
+	const [showPassword, setShowPassword] = useState(false);
 	const router = useRouter();
 
 	const {
@@ -88,15 +89,30 @@ export function RegisterForm() {
 			)}
 
 			<label htmlFor="password">Contraseña</label>
-			<input
-				id="password"
-				type="password"
-				disabled={isLoading}
-				className={clsx("px-5 py-2 border bg-secondary rounded mb-5", {
-					"border-destructive": errors.password
-				})}
-				{...register("password")}
-			/>
+			<div className="relative mb-5">
+				<input
+					id="password"
+					type={showPassword ? "text" : "password"}
+					disabled={isLoading}
+					className={clsx("w-full px-5 py-2 pr-11 border bg-secondary rounded", {
+						"border-destructive": errors.password
+					})}
+					{...register("password")}
+				/>
+				<button
+					type="button"
+					onClick={() => setShowPassword((prev) => !prev)}
+					className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+					aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+					tabIndex={-1}
+				>
+					{showPassword ? (
+						<EyeSlashIcon className="h-5 w-5" />
+					) : (
+						<EyeIcon className="h-5 w-5" />
+					)}
+				</button>
+			</div>
 			{errors.password && (
 				<span className="text-destructive text-sm -mt-4 mb-4">{errors.password.message}</span>
 			)}
