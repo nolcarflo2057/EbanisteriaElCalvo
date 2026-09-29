@@ -145,19 +145,29 @@ export default function StaticLayout({
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
-						"@type": "FurnitureStore",
+						"@type": ["FurnitureStore", "HomeAndConstructionBusiness"],
 						"@id": `${SITE_URL}/#business`,
+						"additionalType": "https://schema.org/ProfessionalService",
 						"name": BRAND,
-						"alternateName": "Ebanistería El Calvo Pereira",
+						"alternateName": ["Ebanistería El Calvo Pereira", "El Calvo Ebanistería"],
 						"description": META_DESCRIPTION,
-						"image": siteConfig.defaultOgImage,
-						"logo": `${SITE_URL}/logo.png`,
+						"slogan": "Tu mueble tiene una historia. Dale una nueva oportunidad.",
+						"image": [
+							siteConfig.defaultOgImage,
+							`${SITE_URL}/logo.png`,
+						],
+						"logo": {
+							"@type": "ImageObject",
+							"url": `${SITE_URL}/logo.png`,
+							"width": 512,
+							"height": 512,
+						},
 						"url": SITE_URL,
 						"telephone": "+573127609748",
 						"email": "contacto@ebanisteria-el-calvo.com",
 						"priceRange": "$$",
 						"currenciesAccepted": "COP",
-						"paymentAccepted": "Efectivo, Transferencia bancaria",
+						"paymentAccepted": "Efectivo, Transferencia bancaria, Nequi, Daviplata",
 						"address": {
 							"@type": "PostalAddress",
 							"streetAddress": "Manzana D Casa 142 esquina, Barrio Atenas - Sector Perla del Sur",
@@ -172,6 +182,17 @@ export default function StaticLayout({
 							"longitude": -75.7275094
 						},
 						"hasMap": "https://www.google.com/maps?cid=14653104836874347307",
+						"foundingDate": "2010",
+						"founder": {
+							"@type": "Person",
+							"name": "El Calvo",
+							"jobTitle": "Ebanista y Fundador",
+						},
+						"numberOfEmployees": {
+							"@type": "QuantitativeValue",
+							"minValue": 2,
+							"maxValue": 5,
+						},
 						"openingHoursSpecification": [
 							{
 								"@type": "OpeningHoursSpecification",
@@ -187,9 +208,11 @@ export default function StaticLayout({
 							}
 						],
 						"areaServed": [
-							{ "@type": "City", "name": "Pereira" },
-							{ "@type": "City", "name": "Dosquebradas" },
-							{ "@type": "AdministrativeArea", "name": "Risaralda" }
+							{ "@type": "City", "name": "Pereira", "sameAs": "https://es.wikipedia.org/wiki/Pereira" },
+							{ "@type": "City", "name": "Dosquebradas", "sameAs": "https://es.wikipedia.org/wiki/Dosquebradas" },
+							{ "@type": "City", "name": "Santa Rosa de Cabal" },
+							{ "@type": "City", "name": "La Virginia" },
+							{ "@type": "AdministrativeArea", "name": "Risaralda", "sameAs": "https://es.wikipedia.org/wiki/Risaralda" }
 						],
 						"knowsAbout": [
 							"Restauración de muebles",
@@ -209,32 +232,48 @@ export default function StaticLayout({
 									"@type": "Offer",
 									"itemOffered": {
 										"@type": "Service",
+										"@id": `${SITE_URL}/#servicio-restauracion`,
 										"name": "Restauración de Muebles",
-										"description": "Restauramos y renovamos muebles antiguos conservando su esencia, recuperando acabados y adaptándolos a nuevos espacios."
+										"description": "Restauramos y renovamos muebles antiguos conservando su esencia, recuperando acabados y adaptándolos a nuevos espacios.",
+										"provider": { "@id": `${SITE_URL}/#business` },
+										"areaServed": { "@type": "City", "name": "Pereira" },
+										"serviceType": "Restauración de mobiliario",
 									}
 								},
 								{
 									"@type": "Offer",
 									"itemOffered": {
 										"@type": "Service",
+										"@id": `${SITE_URL}/#servicio-cocinas`,
 										"name": "Cocinas Integrales a Medida",
-										"description": "Fabricamos cocinas a medida pensando en la distribución, el uso diario y el estilo de tu hogar."
+										"description": "Fabricamos cocinas a medida pensando en la distribución, el uso diario y el estilo de tu hogar.",
+										"provider": { "@id": `${SITE_URL}/#business` },
+										"areaServed": { "@type": "City", "name": "Pereira" },
+										"serviceType": "Fabricación de cocinas integrales",
 									}
 								},
 								{
 									"@type": "Offer",
 									"itemOffered": {
 										"@type": "Service",
+										"@id": `${SITE_URL}/#servicio-closets`,
 										"name": "Clósets y Armarios a Medida",
-										"description": "Diseñamos y fabricamos clósets, vestiers y soluciones de almacenamiento adaptadas a tu espacio."
+										"description": "Diseñamos y fabricamos clósets, vestiers y soluciones de almacenamiento adaptadas a tu espacio.",
+										"provider": { "@id": `${SITE_URL}/#business` },
+										"areaServed": { "@type": "City", "name": "Pereira" },
+										"serviceType": "Fabricación de clósets a medida",
 									}
 								},
 								{
 									"@type": "Offer",
 									"itemOffered": {
 										"@type": "Service",
+										"@id": `${SITE_URL}/#servicio-puertas`,
 										"name": "Puertas de Madera",
-										"description": "Reparación, restauración y fabricación de puertas y elementos de madera."
+										"description": "Reparación, restauración y fabricación de puertas y elementos de madera.",
+										"provider": { "@id": `${SITE_URL}/#business` },
+										"areaServed": { "@type": "City", "name": "Pereira" },
+										"serviceType": "Fabricación y reparación de puertas",
 									}
 								}
 							]
@@ -245,7 +284,30 @@ export default function StaticLayout({
 							"reviewCount": "45",
 							"bestRating": "5"
 						},
-						"sameAs": []
+						"sameAs": [
+							"https://www.google.com/maps?cid=14653104836874347307",
+						],
+						"potentialAction": [
+							{
+								"@type": "CommunicateAction",
+								"target": {
+									"@type": "EntryPoint",
+									"urlTemplate": "https://wa.me/573127609748?text=Hola%2C%20me%20interesar%C3%ADa%20solicitar%20un%20presupuesto",
+									"actionPlatform": "https://schema.org/MobileWebPlatform",
+								},
+								"name": "Contactar por WhatsApp",
+							},
+							{
+								"@type": "ReserveAction",
+								"target": {
+									"@type": "EntryPoint",
+									"urlTemplate": `${SITE_URL}/#contacto`,
+									"actionPlatform": "https://schema.org/DesktopWebPlatform",
+								},
+								"name": "Solicitar presupuesto",
+							}
+						],
+						"isAccessibleForFree": false,
 					}),
 				}}
 			/>
