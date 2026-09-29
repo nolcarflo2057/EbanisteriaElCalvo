@@ -1,5 +1,4 @@
 import { getTenantIntegrations } from "../../settings/services/integrations.service";
-import { hasCookieConsent } from "../../settings/lib/cookie-consent";
 import { safeId } from "../../../shared/utils/safeId";
 
 interface Props {
@@ -9,9 +8,6 @@ interface Props {
 
 
 export async function AnalyticsInjector({ tenantId }: Props) {
-	const consented = await hasCookieConsent();
-	if (!consented) return null;
-
 	const integrations = await getTenantIntegrations(tenantId);
 	const gtmContainerId = safeId(integrations.gtmContainerId);
 	const ga4MeasurementId = safeId(integrations.ga4MeasurementId);

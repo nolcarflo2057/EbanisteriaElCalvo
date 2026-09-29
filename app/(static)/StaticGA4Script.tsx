@@ -1,25 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Script from "next/script";
-import { getCookieConsent, COOKIE_CONSENT_ACCEPTED } from "@/features/settings/components/CookieConsentBanner";
 
 const GA4_MEASUREMENT_ID = "G-NGNN9QHY2T";
 
 /**
  * Inyecta Google Analytics 4 en la landing estática.
- * Solo carga si el usuario aceptó las cookies.
- * Re-evalúa al montar (tras router.refresh() del banner de cookies).
+ * Carga siempre para contar visitas (pageviews), sin depender del consentimiento de cookies.
  */
 export function StaticGA4Script() {
-	const [consented, setConsented] = useState(false);
-
-	useEffect(() => {
-		setConsented(getCookieConsent() === COOKIE_CONSENT_ACCEPTED);
-	}, []);
-
-	if (!consented) return null;
-
 	return (
 		<>
 			<Script
