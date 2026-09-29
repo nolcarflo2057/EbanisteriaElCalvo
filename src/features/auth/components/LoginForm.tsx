@@ -97,7 +97,7 @@ export function LoginForm({ redirectTo = "/", showRegisterLink = true }: { redir
 					<button
 						type="button"
 						onClick={() => setShowPassword((prev) => !prev)}
-						className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+						className="absolute inset-y-0 right-3 flex items-center text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
 						aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
 						tabIndex={-1}
 					>
